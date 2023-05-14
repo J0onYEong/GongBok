@@ -148,12 +148,6 @@ struct HomeScreen: View {
                 LinearGradient(colors: [.gradient2, .gradient1], startPoint: .leading, endPoint: .trailing)
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .shadow(color: .gray, radius: 5, y: 5)
-                HStack {
-                    Spacer()
-                    Text("\(levelExpForText)/1000")
-                        .font(Font.system(size: 12))
-                        .padding([.trailing], 10)
-                }
                 Circle()
                     .fill(.white)
                     .frame(height: 20)
@@ -163,6 +157,12 @@ struct HomeScreen: View {
                         let per = Double(levelExpForPin) / 1000.0
                         return 15.0+gap*Double(per)
                     }(), y: geo.size.height/2)
+                HStack {
+                    Spacer()
+                    Text("\(levelExpForText)/1000")
+                        .font(Font.system(size: 12))
+                        .padding([.trailing], 10)
+                }
             }
         }
         .onAppear {
@@ -171,8 +171,8 @@ struct HomeScreen: View {
             }
             
             if levelExpForText < 500 {
-                Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { timer in
-                    levelExpForText += 1;
+                Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+                    levelExpForText += (viewModel.testData.experience / 50);
                     if levelExpForText == viewModel.testData.experience {
                         timer.invalidate()
                     }

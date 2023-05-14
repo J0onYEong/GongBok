@@ -19,7 +19,6 @@
 		9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */; };
 		9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */; };
 		9BFE03C32A10ABCA00E105D5 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9BFE03C22A10ABCA00E105D5 /* KakaoSDK */; };
-		9BFE03CB2A10ADBF00E105D5 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */; };
 		9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */; };
 		9BFE03CF2A10B3B700E105D5 /* MainSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */; };
 		9BFE03D22A10B47D00E105D5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D12A10B47D00E105D5 /* NavigationController.swift */; };
@@ -27,6 +26,7 @@
 		9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */; };
 		9BFE03DB2A10C26C00E105D5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */; };
 		9BFE03DE2A10C59C00E105D5 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */; };
+		9BFE03EB2A110B8D00E105D5 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE03EA2A110B8D00E105D5 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCheckingScreen.swift; sourceTree = "<group>"; };
 		9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		9BFE03C92A10AD2900E105D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneController.swift; sourceTree = "<group>"; };
 		9BFE03D12A10B47D00E105D5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScreen.swift; sourceTree = "<group>"; };
 		9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
+		9BFE03EA2A110B8D00E105D5 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Secrets.plist; path = "../../../../.Trash/GongBok 오후 9.23.29/GongBok/Secrets.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +84,11 @@
 		9BFE03962A10AA2B00E105D5 /* GongBok */ = {
 			isa = PBXGroup;
 			children = (
-				9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */,
 				9BFE03C92A10AD2900E105D5 /* Info.plist */,
+				9BFE03EA2A110B8D00E105D5 /* Secrets.plist */,
 				9BFE03D32A10B63700E105D5 /* Extension */,
 				9BFE03AB2A10AB2D00E105D5 /* Service */,
-				9BFE03C42A10AC1600E105D5 /* Model */,
+				9BFE03E92A110B7700E105D5 /* Model */,
 				9BFE03AE2A10AB2D00E105D5 /* ViewModel */,
 				9BFE03B42A10AB2D00E105D5 /* Screen */,
 				9BFE03B22A10AB2D00E105D5 /* Scene */,
@@ -145,13 +145,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		9BFE03C42A10AC1600E105D5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9BFE03D02A10B46B00E105D5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +187,13 @@
 				9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */,
 			);
 			path = TabScreen;
+			sourceTree = "<group>";
+		};
+		9BFE03E92A110B7700E105D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFE039F2A10AA2D00E105D5 /* Preview Assets.xcassets in Resources */,
-				9BFE03CB2A10ADBF00E105D5 /* Secrets.plist in Resources */,
+				9BFE03EB2A110B8D00E105D5 /* Secrets.plist in Resources */,
 				9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
