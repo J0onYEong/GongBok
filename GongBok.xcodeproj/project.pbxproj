@@ -8,17 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
-		9BFE039A2A10AA2B00E105D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03992A10AA2B00E105D5 /* ContentView.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
 		9BFE039F2A10AA2D00E105D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039E2A10AA2D00E105D5 /* Preview Assets.xcassets */; };
+		9BFE03B82A10AB2D00E105D5 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03AC2A10AB2D00E105D5 /* FileController.swift */; };
+		9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03AD2A10AB2D00E105D5 /* KakaoSocialLogin.swift */; };
+		9BFE03BA2A10AB2D00E105D5 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */; };
+		9BFE03BB2A10AB2D00E105D5 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B02A10AB2D00E105D5 /* GlobalState.swift */; };
+		9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */; };
+		9BFE03BD2A10AB2D00E105D5 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B32A10AB2D00E105D5 /* MainScene.swift */; };
+		9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */; };
+		9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */; };
+		9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */; };
+		9BFE03C32A10ABCA00E105D5 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9BFE03C22A10ABCA00E105D5 /* KakaoSDK */; };
+		9BFE03CB2A10ADBF00E105D5 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */; };
+		9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
-		9BFE03992A10AA2B00E105D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BFE039E2A10AA2D00E105D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BFE03AC2A10AB2D00E105D5 /* FileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
+		9BFE03AD2A10AB2D00E105D5 /* KakaoSocialLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoSocialLogin.swift; sourceTree = "<group>"; };
+		9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
+		9BFE03B02A10AB2D00E105D5 /* GlobalState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationObject.swift; sourceTree = "<group>"; };
+		9BFE03B32A10AB2D00E105D5 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
+		9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCheckingScreen.swift; sourceTree = "<group>"; };
+		9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		9BFE03C92A10AD2900E105D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFE03C32A10ABCA00E105D5 /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +74,14 @@
 		9BFE03962A10AA2B00E105D5 /* GongBok */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */,
+				9BFE03C92A10AD2900E105D5 /* Info.plist */,
+				9BFE03AB2A10AB2D00E105D5 /* Service */,
+				9BFE03C42A10AC1600E105D5 /* Model */,
+				9BFE03AE2A10AB2D00E105D5 /* ViewModel */,
+				9BFE03B42A10AB2D00E105D5 /* Screen */,
+				9BFE03B22A10AB2D00E105D5 /* Scene */,
 				9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */,
-				9BFE03992A10AA2B00E105D5 /* ContentView.swift */,
 				9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */,
 				9BFE039D2A10AA2D00E105D5 /* Preview Content */,
 			);
@@ -65,6 +94,51 @@
 				9BFE039E2A10AA2D00E105D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BFE03AB2A10AB2D00E105D5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03AC2A10AB2D00E105D5 /* FileController.swift */,
+				9BFE03AD2A10AB2D00E105D5 /* KakaoSocialLogin.swift */,
+				9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9BFE03AE2A10AB2D00E105D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */,
+				9BFE03B02A10AB2D00E105D5 /* GlobalState.swift */,
+				9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9BFE03B22A10AB2D00E105D5 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03B32A10AB2D00E105D5 /* MainScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		9BFE03B42A10AB2D00E105D5 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */,
+				9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */,
+				9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		9BFE03C42A10AC1600E105D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +157,9 @@
 			dependencies = (
 			);
 			name = GongBok;
+			packageProductDependencies = (
+				9BFE03C22A10ABCA00E105D5 /* KakaoSDK */,
+			);
 			productName = GongBok;
 			productReference = 9BFE03942A10AA2B00E105D5 /* GongBok.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +188,9 @@
 				Base,
 			);
 			mainGroup = 9BFE038B2A10AA2B00E105D5;
+			packageReferences = (
+				9BFE03C12A10ABCA00E105D5 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = 9BFE03952A10AA2B00E105D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFE039F2A10AA2D00E105D5 /* Preview Assets.xcassets in Resources */,
+				9BFE03CB2A10ADBF00E105D5 /* Secrets.plist in Resources */,
 				9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +218,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFE039A2A10AA2B00E105D5 /* ContentView.swift in Sources */,
+				9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */,
+				9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */,
+				9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */,
+				9BFE03B82A10AB2D00E105D5 /* FileController.swift in Sources */,
+				9BFE03BB2A10AB2D00E105D5 /* GlobalState.swift in Sources */,
+				9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */,
+				9BFE03BD2A10AB2D00E105D5 /* MainScene.swift in Sources */,
+				9BFE03BA2A10AB2D00E105D5 /* LoginScreenViewModel.swift in Sources */,
+				9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */,
 				9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */,
+				9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +360,7 @@
 				DEVELOPMENT_TEAM = XHRN62S9RK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GongBok/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +390,7 @@
 				DEVELOPMENT_TEAM = XHRN62S9RK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GongBok/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9BFE03C12A10ABCA00E105D5 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9BFE03C22A10ABCA00E105D5 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BFE03C12A10ABCA00E105D5 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BFE038C2A10AA2B00E105D5 /* Project object */;
 }
