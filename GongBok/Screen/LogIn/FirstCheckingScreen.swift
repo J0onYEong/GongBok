@@ -22,7 +22,6 @@ struct FirstCheckingScreen: View {
                 //Test
                 FileController.shared.deleteData(.localToken)
             }
-            
     }
 }
 

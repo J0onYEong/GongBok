@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct MainScene: View {
+    @StateObject var sceneController = MainSceneController()
     
     var body: some View {
-        FirstCheckingScreen()
+        NavigationStack(path: $sceneController.viewState) {
+            Text("Main Scene")
+                .navigationDestination(for: MainSceneViewState.self) { state in
+                    switch (state) {
+                    case .firstChecking:
+                        FirstCheckingScreen()
+                            .navigationBarBackButtonHidden()
+                    case .homePage:
+                        TabScreen()
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+        }
+        .onAppear {
+            sceneController.addToStack(destination: .homePage)
+        }
     }
 }
 

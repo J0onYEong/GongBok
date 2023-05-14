@@ -11,27 +11,9 @@ enum LoginScreenViewState {
     case userInfo
 }
 
-class LoginScreenViewModel: ObservableObject {
-    @Published var viewState: [LoginScreenViewState] = []
+class LoginScreenViewModel: NavigationController<LoginScreenViewState> {
+    var dismiss: DismissAction?    
     
-    var dismiss: DismissAction?
-
-    /// 루트뷰를 제외한 모든 뷰를 pop하고 해당 뷰를 삽입
-    func presentScreen(destination: LoginScreenViewState) {
-        viewState = [destination]
-    }
-    
-    /// 해당뷰를 Stack에 추가
-    func addToStack(destination: LoginScreenViewState) {
-        viewState.append(destination)
-    }
-    
-    func clearStack() {
-        viewState = []
-    }
-}
-
-extension LoginScreenViewModel {
     func logInRequest() {
         KakaoSocialLogin.shared.logIn { result in
             switch(result) {
@@ -51,7 +33,6 @@ extension LoginScreenViewModel {
             }
         }
     }
+    
 }
-
-
 

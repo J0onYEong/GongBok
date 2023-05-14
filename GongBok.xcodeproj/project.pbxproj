@@ -13,7 +13,6 @@
 		9BFE03B82A10AB2D00E105D5 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03AC2A10AB2D00E105D5 /* FileController.swift */; };
 		9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03AD2A10AB2D00E105D5 /* KakaoSocialLogin.swift */; };
 		9BFE03BA2A10AB2D00E105D5 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */; };
-		9BFE03BB2A10AB2D00E105D5 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B02A10AB2D00E105D5 /* GlobalState.swift */; };
 		9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */; };
 		9BFE03BD2A10AB2D00E105D5 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B32A10AB2D00E105D5 /* MainScene.swift */; };
 		9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */; };
@@ -22,6 +21,12 @@
 		9BFE03C32A10ABCA00E105D5 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9BFE03C22A10ABCA00E105D5 /* KakaoSDK */; };
 		9BFE03CB2A10ADBF00E105D5 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */; };
 		9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */; };
+		9BFE03CF2A10B3B700E105D5 /* MainSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */; };
+		9BFE03D22A10B47D00E105D5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D12A10B47D00E105D5 /* NavigationController.swift */; };
+		9BFE03D52A10B64E00E105D5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D42A10B64E00E105D5 /* Color.swift */; };
+		9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */; };
+		9BFE03DB2A10C26C00E105D5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */; };
+		9BFE03DE2A10C59C00E105D5 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +37,6 @@
 		9BFE03AC2A10AB2D00E105D5 /* FileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
 		9BFE03AD2A10AB2D00E105D5 /* KakaoSocialLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoSocialLogin.swift; sourceTree = "<group>"; };
 		9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
-		9BFE03B02A10AB2D00E105D5 /* GlobalState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationObject.swift; sourceTree = "<group>"; };
 		9BFE03B32A10AB2D00E105D5 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,12 @@
 		9BFE03C92A10AD2900E105D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneController.swift; sourceTree = "<group>"; };
+		9BFE03D12A10B47D00E105D5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		9BFE03D42A10B64E00E105D5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScreen.swift; sourceTree = "<group>"; };
+		9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 			children = (
 				9BFE03CA2A10ADBF00E105D5 /* Secrets.plist */,
 				9BFE03C92A10AD2900E105D5 /* Info.plist */,
+				9BFE03D32A10B63700E105D5 /* Extension */,
 				9BFE03AB2A10AB2D00E105D5 /* Service */,
 				9BFE03C42A10AC1600E105D5 /* Model */,
 				9BFE03AE2A10AB2D00E105D5 /* ViewModel */,
@@ -101,7 +112,6 @@
 			children = (
 				9BFE03AC2A10AB2D00E105D5 /* FileController.swift */,
 				9BFE03AD2A10AB2D00E105D5 /* KakaoSocialLogin.swift */,
-				9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -109,9 +119,11 @@
 		9BFE03AE2A10AB2D00E105D5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE03DC2A10C58100E105D5 /* TabScreen */,
+				9BFE03D02A10B46B00E105D5 /* Base */,
 				9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */,
-				9BFE03B02A10AB2D00E105D5 /* GlobalState.swift */,
 				9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */,
+				9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -127,9 +139,8 @@
 		9BFE03B42A10AB2D00E105D5 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */,
-				9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */,
-				9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */,
+				9BFE03D72A10B7AD00E105D5 /* TabScreen */,
+				9BFE03D62A10B79D00E105D5 /* LogIn */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -139,6 +150,50 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9BFE03D02A10B46B00E105D5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03D12A10B47D00E105D5 /* NavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9BFE03D32A10B63700E105D5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */,
+				9BFE03D42A10B64E00E105D5 /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9BFE03D62A10B79D00E105D5 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */,
+				9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */,
+				9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		9BFE03D72A10B7AD00E105D5 /* TabScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */,
+				9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */,
+			);
+			path = TabScreen;
+			sourceTree = "<group>";
+		};
+		9BFE03DC2A10C58100E105D5 /* TabScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */,
+			);
+			path = TabScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,12 +274,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */,
+				9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */,
 				9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */,
 				9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */,
+				9BFE03DE2A10C59C00E105D5 /* HomeScreenController.swift in Sources */,
+				9BFE03DB2A10C26C00E105D5 /* HomeScreen.swift in Sources */,
 				9BFE03B82A10AB2D00E105D5 /* FileController.swift in Sources */,
-				9BFE03BB2A10AB2D00E105D5 /* GlobalState.swift in Sources */,
 				9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */,
 				9BFE03BD2A10AB2D00E105D5 /* MainScene.swift in Sources */,
+				9BFE03CF2A10B3B700E105D5 /* MainSceneController.swift in Sources */,
+				9BFE03D22A10B47D00E105D5 /* NavigationController.swift in Sources */,
+				9BFE03D52A10B64E00E105D5 /* Color.swift in Sources */,
 				9BFE03BA2A10AB2D00E105D5 /* LoginScreenViewModel.swift in Sources */,
 				9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */,
 				9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */,

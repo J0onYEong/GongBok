@@ -10,6 +10,7 @@ import SwiftUI
 struct UserInformationView: View {
     @State private var nickName = ""
     @State private var birthYear = Date.now
+    @State private var buttonColor: Color = .submit
     @ObservedObject var viewModel: LoginScreenViewModel
         
     var submitValidation: Bool {
@@ -63,10 +64,12 @@ struct UserInformationView: View {
                 
                 //서버로 인풋을 넘겨주고 유효성 검사후 화면 조정
                 
+                
+                buttonColor = .underBar
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(Color(red: 236/255, green: 240/255, blue: 241/255))
+                        .foregroundColor(buttonColor)
                         .frame(height: 50)
                         .shadow(color: .gray, radius: 3, x: 0, y: 4)
                     Text("가입 완료")
