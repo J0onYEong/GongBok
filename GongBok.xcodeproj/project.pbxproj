@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BAF26082A13667500E50FB7 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF26072A13667500E50FB7 /* StarView.swift */; };
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
 		9BFE039F2A10AA2D00E105D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039E2A10AA2D00E105D5 /* Preview Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9BAF26072A13667500E50FB7 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
 		9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */,
 				9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */,
+				9BAF26072A13667500E50FB7 /* StarView.swift */,
 			);
 			path = TabScreen;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */,
+				9BAF26082A13667500E50FB7 /* StarView.swift in Sources */,
 				9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */,
 				9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */,
 				9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */,

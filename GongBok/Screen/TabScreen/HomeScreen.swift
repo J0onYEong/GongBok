@@ -24,35 +24,36 @@ struct HomeScreen: View {
         ZStack {
             VStack {
                 HStack(spacing: 0) {
-                    ZStack {
-                        Rectangle()
-                            .fill(.cyan)
-                            .frame(width: 70, height: 50)
-                        Text("사람추가")
+                    Button {
+                        
+                    } label: {
+                        Image("addPerson")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(7)
                     }
                     Spacer()
-                    ZStack {
-                        Rectangle()
-                            .fill(.cyan)
-                            .frame(width: 50, height: 50)
-                        Text("랭킹")
+                    Button {
                         
+                    } label: {
+                        Image("podium")
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
                     }
                     Spacer()
                     Button {
                         modalType = .starLog
                     } label: {
-                        ZStack {
-                            Rectangle()
-                                .fill(.cyan)
-                                .frame(width: 70, height: 50)
-                            Text("별 내역")
-                        }
+                        StarView(starCount: viewModel.testData.starSum)
                     }
                 }
+                .frame(height: 50)
+                .padding([.horizontal], 10)
                 Spacer()
                 
             }
+            
             
             
             
@@ -61,9 +62,10 @@ struct HomeScreen: View {
                     VStack {
                         Spacer()
                         
-                        Rectangle()
-                            .fill(.indigo)
+                        Image("gongboke_idle")
+                            .resizable()
                             .frame(width: 150, height: 190)
+                            
                         
                         Text("Lv \(viewModel.testData.level).")
                             .font(Font.system(size: 25, weight: .bold))
@@ -188,7 +190,7 @@ struct HomeScreen: View {
 extension HomeScreen {
     var starLog: some View {
         VStack {
-            Image(systemName: "star.fill")
+            Image("star2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.yellow)
@@ -251,7 +253,7 @@ fileprivate struct StarInfoView: View {
         HStack {
             Text("\(quizName)")
             Spacer()
-            Image(systemName: "star.fill")
+            Image("star2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 40)
