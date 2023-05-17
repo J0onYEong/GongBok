@@ -98,6 +98,7 @@ struct HomeScreen: View {
                 ZStack {
                     Rectangle()
                         .fill(.gray.opacity(0.3))
+                        .ignoresSafeArea()
                     ZStack {
                         RoundedRectangle(cornerRadius: 25)
                             .fill(.white)
