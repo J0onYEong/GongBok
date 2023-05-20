@@ -54,9 +54,6 @@ struct HomeScreen: View {
                 
             }
             
-            
-            
-            
             GeometryReader { geo in
                 VStack {
                     VStack {

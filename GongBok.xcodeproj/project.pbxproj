@@ -67,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B7809C42A18745400A63B66 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */,
+				9BAF26072A13667500E50FB7 /* StarView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
 		9BFE038B2A10AA2B00E105D5 = {
 			isa = PBXGroup;
 			children = (
@@ -177,9 +186,8 @@
 		9BFE03D72A10B7AD00E105D5 /* TabScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9B7809C42A18745400A63B66 /* HomeScreen */,
 				9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */,
-				9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */,
-				9BAF26072A13667500E50FB7 /* StarView.swift */,
 			);
 			path = TabScreen;
 			sourceTree = "<group>";
