@@ -20,6 +20,11 @@ class NavigationController<ViewState>: ObservableObject {
         viewState.append(destination)
     }
     
+    /// 최상단 뷰를 제거
+    func popTopView() {
+        let _ = viewState.popLast()
+    }
+    
     func clearStack() {
         viewState = []
     }

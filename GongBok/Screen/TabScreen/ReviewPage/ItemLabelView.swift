@@ -7,19 +7,37 @@
 
 import SwiftUI
 
+
+
 struct ItemLabelView: View {
     var color: Color
     var text: String
     
+    var isArrow = true
+    
     var body: some View {
         GeometryReader { geo in
-            HStack {
-                Spacer()
-                Text(text)
-                    .font(Font.system(size: geo.size.height/4, weight: .semibold))
-                    .frame(height: geo.size.height/4)
-                    .padding([.vertical], geo.size.height/3)
-                Spacer()
+            ZStack {
+                HStack {
+                    Spacer()
+                    ZStack {
+                        Text(text)
+                            .font(Font.system(size: geo.size.height/4, weight: .semibold))
+                            .frame(height: geo.size.height/4)
+                            .padding([.vertical], geo.size.height/3)
+                    }
+                    Spacer()
+                }
+                if isArrow {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: geo.size.height/5)
+                            .padding(.trailing, 20)
+                    }
+                }
             }
             .background(
                 ZStack {
