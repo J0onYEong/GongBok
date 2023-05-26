@@ -11,7 +11,6 @@ enum MainSceneViewState {
     case firstChecking, homePage
 }
 
-class MainSceneController: NavigationController<MainSceneViewState> {
-    
-    
+class MainSceneViewModel: ObservableObject {
+    @Published var viewState: MainSceneViewState = .homePage
 }
