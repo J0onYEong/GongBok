@@ -15,137 +15,84 @@ struct StudyContentView: View {
     
     var id: String
     
-    var alignmentState: AlignmentState {
-        viewModel.alignmentState
-    }
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                HStack {
-                    if alignmentState == .vStack {
-                        Spacer()
-                    }
-                    ZStack {
-                        Text("학습 내용:")
-                            .font(Font.system(size: 20, weight: .bold))
-                            .frame(height: 20)
-                            .padding(.trailing, 5)
-                            .padding(.leading, alignmentState == .hStack ? 10 : 0)
-                            .alignmentGuide(VerticalAlignment.center) { d in titleVertical(d) }
-                            .alignmentGuide(HorizontalAlignment.center) { d in titleHorizontal(d) }
-                        if alignmentState == .hStack {
-                            Text(controller.quizData.reviewText)
-                                .font(Font.system(size: 20))
-                                .frame(width: geo.size.width * 0.5, height: 20)
-                                .alignmentGuide(VerticalAlignment.center) { d in contentVertical(d) }
-                                .alignmentGuide(HorizontalAlignment.center) { d in contentHorizontal(d) }
-                        } else {
-                            VStack {
-                                TextField("학습하신 내용을 입력하세요", text: $controller.quizData.reviewText, axis: .vertical)
-                                    .font(Font.system(size: 20))
-                                    .lineLimit(6, reservesSpace: true)
-                                    .textInputAutocapitalization(.never)
-                                    .autocorrectionDisabled()
-                                    .frame(width: geo.size.width * 0.85)
-                                    .focused($focusState)
-                                Button {
-                                    
-                                    //
-                                    //
-                                    //
-                                    controller.submitQuizData(id: id)
-                                    
-                                } label: {
-                                    Text("제출하기")
-                                        .font(Font.system(size: 17, weight: .semibold))
-                                        .foregroundColor(.black)
-                                        .frame(height: 17)
-                                        .padding([.horizontal], 30)
-                                        .padding([.vertical], 10)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: (17 + 20)/2)
-                                                .fill(.white)
-                                                .shadow(color: .gray, radius: 1.5, y: 1.5)
-                                        )
-                                }
-                            }
-                            .alignmentGuide(VerticalAlignment.center) { d in contentVertical(d) }
-                            .alignmentGuide(HorizontalAlignment.center) { d in contentHorizontal(d) }
+        VStack {
+            HStack {
+                Text("학습내용:")
+                    .font(Font.system(size: 15, weight: .semibold))
+                    .frame(height: 15)
+                    .padding(.trailing, 5)
+                Text(viewModel.mode == .Idle ? viewModel.inputString : "")
+                Spacer()
+                Image(systemName: "chevron.down")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 10)
+                    .rotationEffect(.degrees(viewModel.mode  == .Idle ? 0 : 180))
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            viewModel.toogleState()
                         }
+                        focusState = true
                     }
-                    Spacer()
-                }
-                .padding([.vertical], 30)
-                .padding([.horizontal], 10)
-                .background(
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(.white)
-                            .shadow(color: .gray, radius: 3, y: 2)
-                            .padding(3)
-                    }
-                    
-                )
-                VStack {
-                    HStack {
-                        Spacer()
+            }
+            
+            if viewModel.mode == .Input {
+                Rectangle()
+                    .fill(.gray)
+                    .frame(height: 1.3)
+                    .opacity(0.5)
+                    .padding(.top, 5)
+                    .transition(.openSildeEffect())
+            }
+            
+            VStack {
+                if viewModel.mode == .Input {
+                    VStack {
+                        TextField("학습내용을 입력하세요", text: $viewModel.inputString, axis: .vertical)
+                            .font(Font.system(size: 15))
+                            .lineLimit(6, reservesSpace: true)
+                            .textInputAutocapitalization(.never)
+                            .autocorrectionDisabled()
+                            .focused($focusState)
+                            .padding(.bottom, 5)
                         Button {
-                            viewModel.alignmentState = alignmentState == .hStack ? .vStack : .hStack
-                            focusState = true
+                            
                         } label: {
-                            Image(systemName: "chevron.down")
-                                .resizable()
-                                .scaledToFit()
-                                .rotationEffect(Angle(degrees: alignmentState == .hStack ? 0 : 180))
+                            Text("제출하기")
+                                .font(Font.system(size: 13, weight: .semibold))
                                 .foregroundColor(.black)
-                                .frame(height: 10)
-                                .animation(.easeInOut(duration: 0.2), value: alignmentState)
+                                .frame(height: 13)
+                                .padding([.horizontal], 30)
+                                .padding([.vertical], 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: (17 + 20)/2)
+                                        .fill(.white)
+                                        .shadow(color: .gray, radius: 1.5, y: 1.5)
+                                )
                         }
+                        .padding(.bottom, 5)
                     }
-                    .padding([.top, .trailing], 30)
-                    Spacer()
+                    .transition(.customSlideEffect(pos: CGSize(width: 0, height: -200)))
                 }
             }
-            .animation(alignmentState == .vStack ? .easeIn(duration: 0.1) : .none, value: alignmentState)
-            .position(x: geo.size.width/2, y: geo.size.height/2)
+            .clipShape(Rectangle())
         }
-        .frame(height: alignmentState == .hStack ? 60 : 300)
+        .padding(.horizontal, 30)
+        .padding(.vertical, 20)
+        .background(
+            ZStack {
+                RoundedRectangle(cornerRadius: 30)
+                    .fill(.white)
+                    .shadow(color: .gray, radius: 3, y: 2)
+                    .padding(3)
+            }
+
+        )
+
     }
     
-    func titleVertical(_ d: ViewDimensions) -> CGFloat {
-        switch(alignmentState) {
-        case .hStack:
-            return d[.leading]
-        case.vStack:
-            return d[.bottom]
-        }
-    }
-    func titleHorizontal(_ d: ViewDimensions) -> CGFloat {
-        switch(alignmentState) {
-        case .hStack:
-            return d[.trailing]
-        case.vStack:
-            return d[.leading]
-        }
-    }
-    func contentVertical(_ d: ViewDimensions) -> CGFloat {
-        switch(alignmentState) {
-        case .hStack:
-            return d[.top]
-        case.vStack:
-            return d[.top]-10
-        }
-    }
-    func contentHorizontal(_ d: ViewDimensions) -> CGFloat {
-        switch(alignmentState) {
-        case .hStack:
-            return d[.leading]
-        case.vStack:
-            return d[.leading]
-        }
-    }
-
 }
 
 
@@ -154,7 +101,8 @@ struct StudyContentView_Previews: PreviewProvider {
         VStack {
             StudyContentView(id: "파이썬1")
                 .padding([.horizontal], 20)
-                .environmentObject(ReviewScreenController())
+            Spacer()
         }
+        .frame(height: 200)
     }
 }

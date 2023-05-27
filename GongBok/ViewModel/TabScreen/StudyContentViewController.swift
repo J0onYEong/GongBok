@@ -7,13 +7,22 @@
 
 import Foundation
 
-enum AlignmentState {
-    case hStack, vStack
+enum StudyContentViewMode {
+    case Idle, Input
 }
 
 class StudyContentViewController: ObservableObject {
     
-    @Published var alignmentState: AlignmentState = .hStack
+    @Published private(set) var mode: StudyContentViewMode = .Idle
+    @Published var inputString = ""
+    
+    func toogleState() {
+        if mode == .Idle {
+            mode = .Input
+        } else {
+            mode = .Idle
+        }
+    }
     
     func submit() {
         
