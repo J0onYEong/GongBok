@@ -68,4 +68,7 @@ extension ShapeStyle where Self == Color {
     static var gradient2: Color {
         Color(uiColor: UIColor(hex: "166ACC")!)
     }
+    static var settingColor1: Color {
+        Color(uiColor: UIColor(hex: "#F1E5D5")!)
+    }
 }

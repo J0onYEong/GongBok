@@ -16,6 +16,15 @@
 		9B7809D12A1A0DF000A63B66 /* QuizScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809D02A1A0DF000A63B66 /* QuizScreen.swift */; };
 		9B7809D32A1A10CD00A63B66 /* StudyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809D22A1A10CD00A63B66 /* StudyContentView.swift */; };
 		9B7809D52A1A2F2A00A63B66 /* StudyContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809D42A1A2F2A00A63B66 /* StudyContentViewController.swift */; };
+		9B7C94292A22E39500E18C7E /* NotiSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94282A22E39500E18C7E /* NotiSettingView.swift */; };
+		9B7C942B2A22E68100E18C7E /* SettingScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C942A2A22E68100E18C7E /* SettingScreenController.swift */; };
+		9B7C942D2A22E7F900E18C7E /* ResignScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C942C2A22E7F900E18C7E /* ResignScreen.swift */; };
+		9B7C94302A22E85B00E18C7E /* ChildScreenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C942F2A22E85B00E18C7E /* ChildScreenBase.swift */; };
+		9B7C94322A22EE0200E18C7E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94312A22EE0200E18C7E /* UserInfo.swift */; };
+		9B7C94342A2313EF00E18C7E /* ProfileEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94332A2313EF00E18C7E /* ProfileEditScreen.swift */; };
+		9B7C94362A23192F00E18C7E /* GongBokEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94352A23192F00E18C7E /* GongBokEditScreen.swift */; };
+		9B7C94382A231A5700E18C7E /* ConfirmationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94372A231A5700E18C7E /* ConfirmationModalView.swift */; };
+		9B83368F2A22DE44002C68C1 /* MyPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */; };
 		9BAF26082A13667500E50FB7 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF26072A13667500E50FB7 /* StarView.swift */; };
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
@@ -49,6 +58,15 @@
 		9B7809D02A1A0DF000A63B66 /* QuizScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreen.swift; sourceTree = "<group>"; };
 		9B7809D22A1A10CD00A63B66 /* StudyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyContentView.swift; sourceTree = "<group>"; };
 		9B7809D42A1A2F2A00A63B66 /* StudyContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyContentViewController.swift; sourceTree = "<group>"; };
+		9B7C94282A22E39500E18C7E /* NotiSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiSettingView.swift; sourceTree = "<group>"; };
+		9B7C942A2A22E68100E18C7E /* SettingScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenController.swift; sourceTree = "<group>"; };
+		9B7C942C2A22E7F900E18C7E /* ResignScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignScreen.swift; sourceTree = "<group>"; };
+		9B7C942F2A22E85B00E18C7E /* ChildScreenBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildScreenBase.swift; sourceTree = "<group>"; };
+		9B7C94312A22EE0200E18C7E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		9B7C94332A2313EF00E18C7E /* ProfileEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditScreen.swift; sourceTree = "<group>"; };
+		9B7C94352A23192F00E18C7E /* GongBokEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokEditScreen.swift; sourceTree = "<group>"; };
+		9B7C94372A231A5700E18C7E /* ConfirmationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModalView.swift; sourceTree = "<group>"; };
+		9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageScreen.swift; sourceTree = "<group>"; };
 		9BAF26072A13667500E50FB7 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
@@ -101,9 +119,30 @@
 				9B7809CE2A19A19E00A63B66 /* WeekNumberScreen.swift */,
 				9B7809D02A1A0DF000A63B66 /* QuizScreen.swift */,
 				9B7809D22A1A10CD00A63B66 /* StudyContentView.swift */,
-				9B7809C62A18768F00A63B66 /* ItemLabelView.swift */,
 			);
 			path = ReviewPage;
+			sourceTree = "<group>";
+		};
+		9B7C942E2A22E80A00E18C7E /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				9B7809C62A18768F00A63B66 /* ItemLabelView.swift */,
+				9B7C942F2A22E85B00E18C7E /* ChildScreenBase.swift */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		9B83368D2A22DE19002C68C1 /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */,
+				9B7C942C2A22E7F900E18C7E /* ResignScreen.swift */,
+				9B7C94332A2313EF00E18C7E /* ProfileEditScreen.swift */,
+				9B7C94352A23192F00E18C7E /* GongBokEditScreen.swift */,
+				9B7C94372A231A5700E18C7E /* ConfirmationModalView.swift */,
+				9B7C94282A22E39500E18C7E /* NotiSettingView.swift */,
+			);
+			path = SettingPage;
 			sourceTree = "<group>";
 		};
 		9BFE038B2A10AA2B00E105D5 = {
@@ -218,6 +257,8 @@
 		9BFE03D72A10B7AD00E105D5 /* TabScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9B7C942E2A22E80A00E18C7E /* CommonView */,
+				9B83368D2A22DE19002C68C1 /* SettingPage */,
 				9B7809C52A18758E00A63B66 /* ReviewPage */,
 				9B7809C42A18745400A63B66 /* HomeScreen */,
 				9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */,
@@ -231,6 +272,7 @@
 				9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */,
 				9B7809CC2A1996D900A63B66 /* ReviewScreenController.swift */,
 				9B7809D42A1A2F2A00A63B66 /* StudyContentViewController.swift */,
+				9B7C942A2A22E68100E18C7E /* SettingScreenController.swift */,
 			);
 			path = TabScreen;
 			sourceTree = "<group>";
@@ -238,6 +280,7 @@
 		9BFE03E92A110B7700E105D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B7C94312A22EE0200E18C7E /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,20 +365,29 @@
 				9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */,
 				9BAF26082A13667500E50FB7 /* StarView.swift in Sources */,
 				9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */,
+				9B7C94292A22E39500E18C7E /* NotiSettingView.swift in Sources */,
 				9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */,
+				9B83368F2A22DE44002C68C1 /* MyPageScreen.swift in Sources */,
 				9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */,
+				9B7C942D2A22E7F900E18C7E /* ResignScreen.swift in Sources */,
 				9BFE03DE2A10C59C00E105D5 /* HomeScreenController.swift in Sources */,
+				9B7C94302A22E85B00E18C7E /* ChildScreenBase.swift in Sources */,
 				9BFE03DB2A10C26C00E105D5 /* HomeScreen.swift in Sources */,
 				9BFE03B82A10AB2D00E105D5 /* FileController.swift in Sources */,
 				9B7809D32A1A10CD00A63B66 /* StudyContentView.swift in Sources */,
+				9B7C94342A2313EF00E18C7E /* ProfileEditScreen.swift in Sources */,
 				9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */,
 				9BFE03BD2A10AB2D00E105D5 /* MainScene.swift in Sources */,
 				9BFE03CF2A10B3B700E105D5 /* MainSceneController.swift in Sources */,
 				9BFE03D22A10B47D00E105D5 /* NavigationController.swift in Sources */,
 				9BFE03D52A10B64E00E105D5 /* Color.swift in Sources */,
+				9B7C94362A23192F00E18C7E /* GongBokEditScreen.swift in Sources */,
 				9B7809D52A1A2F2A00A63B66 /* StudyContentViewController.swift in Sources */,
+				9B7C942B2A22E68100E18C7E /* SettingScreenController.swift in Sources */,
+				9B7C94322A22EE0200E18C7E /* UserInfo.swift in Sources */,
 				9BFE03BA2A10AB2D00E105D5 /* LoginScreenViewModel.swift in Sources */,
 				9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */,
+				9B7C94382A231A5700E18C7E /* ConfirmationModalView.swift in Sources */,
 				9B7809D12A1A0DF000A63B66 /* QuizScreen.swift in Sources */,
 				9B552D282A2123F000589537 /* TransitionExtension.swift in Sources */,
 				9B7809C72A18768F00A63B66 /* ItemLabelView.swift in Sources */,

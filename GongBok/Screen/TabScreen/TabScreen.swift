@@ -28,7 +28,7 @@ struct TabScreen: View {
                 .tabItem {
                     Image(systemName: "calendar")
                 }
-            Text("The Fifth Tab")
+            MyPageScreen()
                 .tabItem {
                     Image(systemName: "gearshape")
                 }
