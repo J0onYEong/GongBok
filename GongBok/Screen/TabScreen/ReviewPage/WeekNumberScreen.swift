@@ -46,7 +46,7 @@ struct WeekNumberScreen: View {
                                 controller.addWeekNumElement(sub: subject)
                             }
                         } label: {
-                            ItemLabelView(color: .background, text: "+", isArrow: false)
+                            ItemLabelView(color: .background, text: "+", showImage: false)
                                 .frame(height: 60)
                                 .padding(.bottom, 20)
                                 .foregroundColor(.gray)

@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct UserInformationView: View {
-    @State private var nickName = ""
-    @State private var birthYear = Date.now
+    @State private var userInfo = UserInfo(nickName: "", birthYear: 2000)
     @State private var buttonColor: Color = .submit
     @ObservedObject var viewModel: LoginScreenViewModel
         
     var submitValidation: Bool {
-        return nickName.count >= 3
+        return userInfo.nickName.count >= 3
     }
     
     var body: some View {
@@ -31,7 +30,7 @@ struct UserInformationView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.gray.opacity(0.1))
-                        TextField("", text: $nickName)
+                        TextField("", text: $userInfo.nickName)
                             .padding([.horizontal], 12)
                             .padding([.vertical], 5)
                             .autocorrectionDisabled(true)
@@ -46,7 +45,7 @@ struct UserInformationView: View {
                         .font(Font.system(size: 17, weight: .medium))
                         .padding(.leading, 20)
                     Spacer()
-                    Picker("", selection: $birthYear) {
+                    Picker("", selection: $userInfo.birthYear) {
                         ForEach(1980...Calendar.current.component(.year, from: Date.now), id: \.self) {
                             Text(String($0))
                         }
