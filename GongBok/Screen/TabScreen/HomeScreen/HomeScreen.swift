@@ -43,7 +43,9 @@ struct HomeScreen: View {
                     }
                     Spacer()
                     Button {
-                        modalType = .starLog
+                        withAnimation {
+                            modalType = .starLog
+                        }
                     } label: {
                         StarView(starCount: viewModel.testData.starSum)
                     }

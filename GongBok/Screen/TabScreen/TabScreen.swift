@@ -16,7 +16,7 @@ struct TabScreen: View {
                 .tabItem {
                     Image(systemName: "plus.square")
                 }
-            Text("The Second Tab")
+            ReviewScreen()
                 .tabItem {
                     Image(systemName: "book")
                 }
@@ -24,7 +24,7 @@ struct TabScreen: View {
                 .tabItem {
                     Image(systemName: "house")
                 }
-            Text("The Fourth Tab")
+            Text("Calander")
                 .tabItem {
                     Image(systemName: "calendar")
                 }
