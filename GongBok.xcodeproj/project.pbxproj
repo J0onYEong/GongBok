@@ -25,6 +25,9 @@
 		9B7C94362A23192F00E18C7E /* GongBokEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94352A23192F00E18C7E /* GongBokEditScreen.swift */; };
 		9B7C94382A231A5700E18C7E /* ConfirmationModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C94372A231A5700E18C7E /* ConfirmationModalView.swift */; };
 		9B83368F2A22DE44002C68C1 /* MyPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */; };
+		9BA2D45F2A27528A00D2EB01 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */; };
+		9BA2D4622A2752B200D2EB01 /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */; };
+		9BA82C602A28885A006C7287 /* ServerAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA82C5F2A28885A006C7287 /* ServerAuthData.swift */; };
 		9BAF26082A13667500E50FB7 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF26072A13667500E50FB7 /* StarView.swift */; };
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
@@ -39,7 +42,6 @@
 		9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */; };
 		9BFE03C32A10ABCA00E105D5 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9BFE03C22A10ABCA00E105D5 /* KakaoSDK */; };
 		9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */; };
-		9BFE03CF2A10B3B700E105D5 /* MainSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */; };
 		9BFE03D22A10B47D00E105D5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D12A10B47D00E105D5 /* NavigationController.swift */; };
 		9BFE03D52A10B64E00E105D5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D42A10B64E00E105D5 /* Color.swift */; };
 		9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */; };
@@ -67,6 +69,9 @@
 		9B7C94352A23192F00E18C7E /* GongBokEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokEditScreen.swift; sourceTree = "<group>"; };
 		9B7C94372A231A5700E18C7E /* ConfirmationModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModalView.swift; sourceTree = "<group>"; };
 		9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageScreen.swift; sourceTree = "<group>"; };
+		9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
+		9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
+		9BA82C5F2A28885A006C7287 /* ServerAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAuthData.swift; sourceTree = "<group>"; };
 		9BAF26072A13667500E50FB7 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
@@ -82,7 +87,6 @@
 		9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		9BFE03C92A10AD2900E105D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9BFE03CC2A10ADEF00E105D5 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
-		9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneController.swift; sourceTree = "<group>"; };
 		9BFE03D12A10B47D00E105D5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		9BFE03D42A10B64E00E105D5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		9BFE03D82A10B7BF00E105D5 /* TabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScreen.swift; sourceTree = "<group>"; };
@@ -145,6 +149,14 @@
 			path = SettingPage;
 			sourceTree = "<group>";
 		};
+		9BA2D4602A27529200D2EB01 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		9BFE038B2A10AA2B00E105D5 = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +216,6 @@
 				9BFE03D02A10B46B00E105D5 /* Base */,
 				9BFE03AF2A10AB2D00E105D5 /* LoginScreenViewModel.swift */,
 				9BFE03B12A10AB2D00E105D5 /* AuthenticationObject.swift */,
-				9BFE03CE2A10B3B700E105D5 /* MainSceneController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -247,9 +258,11 @@
 		9BFE03D62A10B79D00E105D5 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */,
+				9BA2D4602A27529200D2EB01 /* UIKit */,
 				9BFE03B62A10AB2D00E105D5 /* FirstCheckingScreen.swift */,
 				9BFE03B72A10AB2D00E105D5 /* LoginScreen.swift */,
+				9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */,
+				9BFE03B52A10AB2D00E105D5 /* UserInformationView.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -281,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				9B7C94312A22EE0200E18C7E /* UserInfo.swift */,
+				9BA82C5F2A28885A006C7287 /* ServerAuthData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +384,7 @@
 				9B83368F2A22DE44002C68C1 /* MyPageScreen.swift in Sources */,
 				9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */,
 				9B7C942D2A22E7F900E18C7E /* ResignScreen.swift in Sources */,
+				9BA2D4622A2752B200D2EB01 /* WebViewRepresentable.swift in Sources */,
 				9BFE03DE2A10C59C00E105D5 /* HomeScreenController.swift in Sources */,
 				9B7C94302A22E85B00E18C7E /* ChildScreenBase.swift in Sources */,
 				9BFE03DB2A10C26C00E105D5 /* HomeScreen.swift in Sources */,
@@ -377,8 +392,8 @@
 				9B7809D32A1A10CD00A63B66 /* StudyContentView.swift in Sources */,
 				9B7C94342A2313EF00E18C7E /* ProfileEditScreen.swift in Sources */,
 				9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */,
+				9BA2D45F2A27528A00D2EB01 /* WebViewScreen.swift in Sources */,
 				9BFE03BD2A10AB2D00E105D5 /* MainScene.swift in Sources */,
-				9BFE03CF2A10B3B700E105D5 /* MainSceneController.swift in Sources */,
 				9BFE03D22A10B47D00E105D5 /* NavigationController.swift in Sources */,
 				9BFE03D52A10B64E00E105D5 /* Color.swift in Sources */,
 				9B7C94362A23192F00E18C7E /* GongBokEditScreen.swift in Sources */,
@@ -397,6 +412,7 @@
 				9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */,
 				9B7809CB2A19947500A63B66 /* ApiRequest.swift in Sources */,
 				9B7809C92A187B4B00A63B66 /* ReviewScreen.swift in Sources */,
+				9BA82C602A28885A006C7287 /* ServerAuthData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

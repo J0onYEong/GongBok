@@ -16,7 +16,7 @@ struct LoginScreen: View {
             GeometryReader { geo in
                 VStack {
                     Button {
-                        viewModel.logInRequest()
+                        viewModel.addToStack(destination: .webView)
                     } label: {
                         Image("kakao_login_large_wide")
                             .resizable()
@@ -26,16 +26,18 @@ struct LoginScreen: View {
                 }
                 .position(x: geo.size.width/2, y: geo.size.height/2)
             }
-                .navigationDestination(for: LoginScreenViewState.self) { state in
-                    switch (state) {
+            .navigationDestination(for: LoginScreenViewState.self) { state in
+                switch (state) {
                     case .userInfo:
-                        UserInformationView(viewModel: viewModel)
-                    }
+                        UserInformationView()
+                            .navigationBarBackButtonHidden()
+                    case .webView:
+                        WebViewScreen()
+                            .navigationBarBackButtonHidden()
                 }
+            }
         }
-        .onAppear {
-            viewModel.dismiss = dismiss
-        }
+        .environmentObject(viewModel)
     }
 }
 

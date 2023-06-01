@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct UserInformationView: View {
     @State private var userInfo = UserInfo(nickName: "", birthYear: 2000)
-    @State private var buttonColor: Color = .submit
-    @ObservedObject var viewModel: LoginScreenViewModel
+    @EnvironmentObject var authObj: AuthenticationObject
+    @EnvironmentObject var viewModel: LoginScreenViewModel
         
     var submitValidation: Bool {
         return userInfo.nickName.count >= 3
@@ -60,15 +61,25 @@ struct UserInformationView: View {
             .padding(.top, 75)
             
             Button {
+                guard let accessTk = authObj.localAuthData?.accessToken, let sendData = try? JSONEncoder().encode(userInfo) else {
+                    return;
+                }
                 
-                //서버로 인풋을 넘겨주고 유효성 검사후 화면 조정
+                let url = APIUrl.personalDataSave
+                var request = URLRequest(url: URL(string: url)!)
+                request.httpMethod = HTTPMethod.patch.rawValue
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.setValue("application/json", forHTTPHeaderField: "Accept")
+                request.setValue("Bearer \(accessTk)", forHTTPHeaderField: "Authorization")
+                request.httpBody = sendData
                 
-                
-                buttonColor = .underBar
+//                AF.request(request).responseDecodable(of: PersonalDataReponse.self) { res in
+//
+//                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .foregroundColor(buttonColor)
+                        .foregroundColor(submitValidation ? .underBar : .submit)
                         .frame(height: 50)
                         .shadow(color: .gray, radius: 3, x: 0, y: 4)
                     Text("가입 완료")
@@ -85,6 +96,7 @@ struct UserInformationView: View {
 
 struct UserInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInformationView(viewModel: LoginScreenViewModel())
+        UserInformationView()
+            .environmentObject(LoginScreenViewModel())
     }
 }

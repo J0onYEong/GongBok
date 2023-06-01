@@ -8,7 +8,7 @@
 import Foundation
 
 enum FileName: String {
-    case localToken = "localToken"
+    case authorizationData = "authorizationData"
 }
 
 struct FileController {

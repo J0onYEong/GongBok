@@ -13,19 +13,10 @@ import KakaoSDKAuth
 struct GongBokApp: App {
     @ObservedObject var authentication = AuthenticationObject()
     
-    init() {
-        KakaoSDK.initSDK(appKey: Bundle.main.apiKey!)
-    }
-    
     var body: some Scene {
         WindowGroup {
             MainScene()
                 .environmentObject(authentication)
-                .onOpenURL { url in
-                    if AuthApi.isKakaoTalkLoginUrl(url) {
-                        _ = AuthController.handleOpenUrl(url: url)
-                    }
-                }
         }
     }
 }

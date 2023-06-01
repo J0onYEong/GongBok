@@ -11,17 +11,21 @@ struct FirstCheckingScreen: View {
     @EnvironmentObject var authentication: AuthenticationObject
     
     var body: some View {
-        Text("토큰존재 확인전 최초 뷰입니다.")
-            .onAppear {
-                authentication.checkLocalToken()
+        Group {
+            switch authentication.tokenCheckingState {
+                case .checking:
+                    Text("알아보는 중....")
+                case .available:
+                    TabScreen()
+                        .transition(.slide)
+                case .unavailable:
+                    LoginScreen()
+                        .transition(.slide)
             }
-            .fullScreenCover(isPresented: $authentication.presentLoginModal) {
-                LoginScreen()
-            }
-            .onTapGesture {
-                //Test
-                FileController.shared.deleteData(.localToken)
-            }
+        }
+        .onAppear {
+            authentication.checkLocalAuthData()
+        }
     }
 }
 

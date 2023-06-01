@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserInfo {
+struct UserInfo: Codable {
     var nickName: String
     var birthYear: Int
     
