@@ -32,6 +32,11 @@ final class AuthenticationObject: ObservableObject {
         localAuthData = ServerAuthDataViewModel(accessToken: data.accessToken)
         FileController.shared.saveData(.authorizationData, data)
     }
+    
+    func setViewState(_ state: TokenCheckingState) {
+        objectWillChange.send()
+        tokenCheckingState = state
+    }
 }
 
 enum TokenCheckingState {

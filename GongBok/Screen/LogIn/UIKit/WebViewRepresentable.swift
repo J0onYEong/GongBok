@@ -74,9 +74,14 @@ class Coordinator: NSObject, WKNavigationDelegate {
             if let responseData = result as? String, let data = responseData.data(using: .utf8) {
                 do {
                     let decoded = try JSONDecoder().decode(ServerAuthData.self, from: data)
-                    print(decoded.accessToken)
                     self.parent.authObj.setLocalAuthData(decoded)
-                    self.parent.viewModel.addToStack(destination: .userInfo)
+                    //첫 접속일 경우
+                    if decoded.role != nil {
+                        self.parent.viewModel.addToStack(destination: .userInfo)
+                    } else {
+                        self.parent.viewModel.popTopView()
+                        self.parent.authObj.setViewState(.available)
+                    }
                 } catch {
                     print(error.localizedDescription)
                 }

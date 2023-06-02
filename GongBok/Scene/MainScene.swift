@@ -10,9 +10,6 @@ import SwiftUI
 struct MainScene: View {
     var body: some View {
         FirstCheckingScreen()
-            .onAppear {
-                FileController.shared.deleteData(.authorizationData)
-            }
     }
 }
 

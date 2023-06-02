@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UserInfo: Codable {
-    var nickName: String
+    var nickname: String
     var birthYear: Int
     
-    static let testData = UserInfo(nickName: "닉네임", birthYear: 2000)
+    static let testData = UserInfo(nickname: "닉네임", birthYear: 2000)
 }

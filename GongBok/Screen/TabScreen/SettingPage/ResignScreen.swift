@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ResignScreen: View {
     @EnvironmentObject var controller: SettingScreenController
+    @EnvironmentObject var authObj: AuthenticationObject
+    @Environment(\.dismiss) var dismiss
     
     @State private var showConfirmationSheet = false
     
@@ -75,9 +77,11 @@ struct ResignScreen: View {
             .zIndex(0)
             
             ConfirmationModalView(isPresent: $showConfirmationSheet, mainText: "탈퇴를 완료하시겠습니까?") {
-                //로그아웃 로직
+                controller.withdrawAccountRequest() {
+                    authObj.setViewState(.unavailable)
+                }
             } onRefuse: {
-                //..
+                dismiss()
             }
             .zIndex(1)
         }

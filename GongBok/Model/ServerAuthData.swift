@@ -8,7 +8,7 @@
 import Foundation
 
 struct ServerAuthData: Codable {
-    var role: String
+    var role: String?
     var accessToken: String
     var refreshToken: String
 }

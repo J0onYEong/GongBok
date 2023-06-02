@@ -17,7 +17,6 @@ struct FirstCheckingScreen: View {
                     Text("알아보는 중....")
                 case .available:
                     TabScreen()
-                        .transition(.slide)
                 case .unavailable:
                     LoginScreen()
                         .transition(.slide)
@@ -26,6 +25,7 @@ struct FirstCheckingScreen: View {
         .onAppear {
             authentication.checkLocalAuthData()
         }
+        .animation(.easeInOut, value: authentication.tokenCheckingState)
     }
 }
 

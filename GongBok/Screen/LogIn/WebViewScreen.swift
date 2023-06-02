@@ -12,6 +12,18 @@ struct WebViewScreen: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                Button {
+                    dismiss()
+                } label: {
+                    Image("x")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
+                        .padding(10)
+                }
+            }
             WebViewRepresentable(url: URL(string: APIUrl.kakaoLoginWeb)!)
         }
     }

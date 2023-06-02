@@ -9,13 +9,8 @@ import SwiftUI
 import Alamofire
 
 struct UserInformationView: View {
-    @State private var userInfo = UserInfo(nickName: "", birthYear: 2000)
     @EnvironmentObject var authObj: AuthenticationObject
     @EnvironmentObject var viewModel: LoginScreenViewModel
-        
-    var submitValidation: Bool {
-        return userInfo.nickName.count >= 3
-    }
     
     var body: some View {
         VStack {
@@ -31,7 +26,7 @@ struct UserInformationView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.gray.opacity(0.1))
-                        TextField("", text: $userInfo.nickName)
+                        TextField("닉네임", text: $viewModel.nickName)
                             .padding([.horizontal], 12)
                             .padding([.vertical], 5)
                             .autocorrectionDisabled(true)
@@ -46,7 +41,7 @@ struct UserInformationView: View {
                         .font(Font.system(size: 17, weight: .medium))
                         .padding(.leading, 20)
                     Spacer()
-                    Picker("", selection: $userInfo.birthYear) {
+                    Picker("", selection: $viewModel.birthYear) {
                         ForEach(1980...Calendar.current.component(.year, from: Date.now), id: \.self) {
                             Text(String($0))
                         }
@@ -61,32 +56,20 @@ struct UserInformationView: View {
             .padding(.top, 75)
             
             Button {
-                guard let accessTk = authObj.localAuthData?.accessToken, let sendData = try? JSONEncoder().encode(userInfo) else {
-                    return;
+                viewModel.registerPersonalData {
+                    authObj.setViewState(.available)
                 }
-                
-                let url = APIUrl.personalDataSave
-                var request = URLRequest(url: URL(string: url)!)
-                request.httpMethod = HTTPMethod.patch.rawValue
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.setValue("application/json", forHTTPHeaderField: "Accept")
-                request.setValue("Bearer \(accessTk)", forHTTPHeaderField: "Authorization")
-                request.httpBody = sendData
-                
-//                AF.request(request).responseDecodable(of: PersonalDataReponse.self) { res in
-//
-//                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .foregroundColor(submitValidation ? .underBar : .submit)
+                        .foregroundColor(viewModel.inputValidation ? .underBar : .submit)
                         .frame(height: 50)
                         .shadow(color: .gray, radius: 3, x: 0, y: 4)
                     Text("가입 완료")
                         .foregroundColor(.gray)
                 }
             }
-            .disabled(!submitValidation)
+            .disabled(!viewModel.inputValidation)
             .padding([.horizontal], 50)
             .padding(.top, 200)
         }
