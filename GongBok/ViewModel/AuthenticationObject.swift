@@ -18,7 +18,7 @@ final class AuthenticationObject: ObservableObject {
     
     func checkLocalAuthData() {
         objectWillChange.send()
-        if let authData = FileController.shared.getData(.authorizationData, type: ServerAuthData.self) {
+        if let authData = FileController.shared.getData(.authorizationData, type: ServerAuthDataResponse.self) {
             //내부저장소에 저장된 데이터 토큰을 건네받음
             localAuthData = ServerAuthDataViewModel(accessToken: authData.accessToken)
             tokenCheckingState = .available
@@ -27,7 +27,7 @@ final class AuthenticationObject: ObservableObject {
         }
     }
     
-    func setLocalAuthData(_ data: ServerAuthData) {
+    func setLocalAuthData(_ data: ServerAuthDataResponse) {
         objectWillChange.send()
         localAuthData = ServerAuthDataViewModel(accessToken: data.accessToken)
         FileController.shared.saveData(.authorizationData, data)

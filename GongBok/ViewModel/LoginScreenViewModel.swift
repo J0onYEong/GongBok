@@ -24,7 +24,7 @@ class LoginScreenViewModel: NavigationController<LoginScreenViewState> {
     func registerPersonalData(completion: (() -> ())?) {
         let userInfo = UserInfo(nickname: self.nickName, birthYear: self.birthYear)
         
-        guard let accessToken = FileController.shared.getData(.authorizationData, type: ServerAuthData.self)?.accessToken else {
+        guard let accessToken = FileController.shared.getData(.authorizationData, type: ServerAuthDataResponse.self)?.accessToken else {
             print("토큰없음")
             return;
         }

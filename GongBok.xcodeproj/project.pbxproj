@@ -27,7 +27,7 @@
 		9B83368F2A22DE44002C68C1 /* MyPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */; };
 		9BA2D45F2A27528A00D2EB01 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */; };
 		9BA2D4622A2752B200D2EB01 /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */; };
-		9BA82C602A28885A006C7287 /* ServerAuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA82C5F2A28885A006C7287 /* ServerAuthData.swift */; };
+		9BA82C602A28885A006C7287 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA82C5F2A28885A006C7287 /* ServerResponse.swift */; };
 		9BAF26082A13667500E50FB7 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF26072A13667500E50FB7 /* StarView.swift */; };
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
@@ -71,7 +71,7 @@
 		9B83368E2A22DE44002C68C1 /* MyPageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageScreen.swift; sourceTree = "<group>"; };
 		9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 		9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
-		9BA82C5F2A28885A006C7287 /* ServerAuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAuthData.swift; sourceTree = "<group>"; };
+		9BA82C5F2A28885A006C7287 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		9BAF26072A13667500E50FB7 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				9B7C94312A22EE0200E18C7E /* UserInfo.swift */,
-				9BA82C5F2A28885A006C7287 /* ServerAuthData.swift */,
+				9BA82C5F2A28885A006C7287 /* ServerResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 				9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */,
 				9B7809CB2A19947500A63B66 /* ApiRequest.swift in Sources */,
 				9B7809C92A187B4B00A63B66 /* ReviewScreen.swift in Sources */,
-				9BA82C602A28885A006C7287 /* ServerAuthData.swift in Sources */,
+				9BA82C602A28885A006C7287 /* ServerResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
