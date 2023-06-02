@@ -12,29 +12,38 @@ import KakaoSDKAuth // authApi
 
 final class AuthenticationObject: ObservableObject {
     
-    @Published var presentLoginModal: Bool = false
+    private(set) var localAuthData: ServerAuthDataViewModel?
     
-    private(set) var localToken: String?
+    @Published private(set) var tokenCheckingState: TokenCheckingState = .checking
     
-    private var tokenCheckingState: TokenCheckingState = .checking {
-        didSet {
-            if(tokenCheckingState == .unavailable) {
-                presentLoginModal = true
-            }
-        }
-    }
-    
-    func checkLocalToken() {
-        if let lt = FileController.shared.getData(.localToken, type: String.self) {
-            localToken = lt
+    func checkLocalAuthData() {
+        objectWillChange.send()
+        if let authData = FileController.shared.getData(.authorizationData, type: ServerAuthDataResponse.self) {
+            //내부저장소에 저장된 데이터 토큰을 건네받음
+            localAuthData = ServerAuthDataViewModel(accessToken: authData.accessToken)
             tokenCheckingState = .available
         } else {
             tokenCheckingState = .unavailable
         }
     }
-}
-extension AuthenticationObject {
-    enum TokenCheckingState {
-        case checking, available, unavailable
+    
+    func setLocalAuthData(_ data: ServerAuthDataResponse) {
+        objectWillChange.send()
+        localAuthData = ServerAuthDataViewModel(accessToken: data.accessToken)
+        FileController.shared.saveData(.authorizationData, data)
+    }
+    
+    func setViewState(_ state: TokenCheckingState) {
+        objectWillChange.send()
+        tokenCheckingState = state
     }
 }
+
+enum TokenCheckingState {
+    case checking, available, unavailable
+}
+
+struct ServerAuthDataViewModel {
+    var accessToken: String
+}
+

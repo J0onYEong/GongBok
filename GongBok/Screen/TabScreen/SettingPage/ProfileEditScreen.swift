@@ -58,11 +58,10 @@ struct ProfileEditScreen: View {
                 Spacer()
                 
                 Button {
-                    
                     //수정 로직
-                    dismiss()
+                    controller.updateUserPersonalData()
                     
-                
+                    dismiss()
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style: .continuous)

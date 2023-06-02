@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct MainScene: View {
-    @StateObject var viewModel = MainSceneViewModel()
-    
     var body: some View {
-        switch (viewModel.viewState) {
-            case MainSceneViewState.firstChecking:
-                FirstCheckingScreen()
-                    .navigationBarBackButtonHidden()
-            case MainSceneViewState.homePage:
-                TabScreen()
-                    .navigationBarBackButtonHidden()
-        }
+        FirstCheckingScreen()
     }
 }
 

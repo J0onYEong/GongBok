@@ -8,6 +8,25 @@
 import Foundation
 
 
+struct APIUrl {
+    private static var baseUrl = "http://43.202.26.221:8080/"
+    static var kakaoLoginWeb: String {
+        return baseUrl+"oauth2/authorization/kakao"
+    }
+    
+    static var personalDataSave: String {
+        return baseUrl+"api/member"
+    }
+    
+    static var testGoogle: String {
+        return "https://www.google.co.kr/?hl=ko"
+    }
+    
+    private init() { }
+}
+    
+
+
 /*
  api/subject
     메서드: GET

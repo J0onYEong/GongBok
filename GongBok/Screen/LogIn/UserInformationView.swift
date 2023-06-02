@@ -6,15 +6,11 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct UserInformationView: View {
-    @State private var userInfo = UserInfo(nickName: "", birthYear: 2000)
-    @State private var buttonColor: Color = .submit
-    @ObservedObject var viewModel: LoginScreenViewModel
-        
-    var submitValidation: Bool {
-        return userInfo.nickName.count >= 3
-    }
+    @EnvironmentObject var authObj: AuthenticationObject
+    @EnvironmentObject var viewModel: LoginScreenViewModel
     
     var body: some View {
         VStack {
@@ -30,7 +26,7 @@ struct UserInformationView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.gray.opacity(0.1))
-                        TextField("", text: $userInfo.nickName)
+                        TextField("닉네임", text: $viewModel.nickName)
                             .padding([.horizontal], 12)
                             .padding([.vertical], 5)
                             .autocorrectionDisabled(true)
@@ -45,7 +41,7 @@ struct UserInformationView: View {
                         .font(Font.system(size: 17, weight: .medium))
                         .padding(.leading, 20)
                     Spacer()
-                    Picker("", selection: $userInfo.birthYear) {
+                    Picker("", selection: $viewModel.birthYear) {
                         ForEach(1980...Calendar.current.component(.year, from: Date.now), id: \.self) {
                             Text(String($0))
                         }
@@ -60,22 +56,22 @@ struct UserInformationView: View {
             .padding(.top, 75)
             
             Button {
-                
-                //서버로 인풋을 넘겨주고 유효성 검사후 화면 조정
-                
-                
-                buttonColor = .underBar
+                viewModel.registerPersonalData {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        authObj.setViewState(.available)
+                    }
+                }
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .foregroundColor(buttonColor)
+                        .foregroundColor(viewModel.inputValidation ? .underBar : .submit)
                         .frame(height: 50)
                         .shadow(color: .gray, radius: 3, x: 0, y: 4)
                     Text("가입 완료")
                         .foregroundColor(.gray)
                 }
             }
-            .disabled(!submitValidation)
+            .disabled(!viewModel.inputValidation)
             .padding([.horizontal], 50)
             .padding(.top, 200)
         }
@@ -85,6 +81,7 @@ struct UserInformationView: View {
 
 struct UserInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInformationView(viewModel: LoginScreenViewModel())
+        UserInformationView()
+            .environmentObject(LoginScreenViewModel())
     }
 }
