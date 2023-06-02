@@ -78,7 +78,9 @@ struct ResignScreen: View {
             
             ConfirmationModalView(isPresent: $showConfirmationSheet, mainText: "탈퇴를 완료하시겠습니까?") {
                 controller.withdrawAccountRequest() {
-                    authObj.setViewState(.unavailable)
+                    DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                        authObj.setViewState(.unavailable)
+                    }
                 }
             } onRefuse: {
                 dismiss()

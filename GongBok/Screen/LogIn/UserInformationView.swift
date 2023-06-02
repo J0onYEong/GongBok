@@ -57,7 +57,9 @@ struct UserInformationView: View {
             
             Button {
                 viewModel.registerPersonalData {
-                    authObj.setViewState(.available)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        authObj.setViewState(.available)
+                    }
                 }
             } label: {
                 ZStack {

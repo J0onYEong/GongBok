@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyPageScreen: View {
     @StateObject var controller = SettingScreenController()
+    @EnvironmentObject var authObj: AuthenticationObject
     
     @State private var showLogOutModal = false
     
@@ -85,7 +86,11 @@ struct MyPageScreen: View {
                 .zIndex(0)
                 
                 ConfirmationModalView(isPresent: $showLogOutModal, mainText: "로그아웃 하시겠습니까?") {
-                    //로그아웃 로직
+                    DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                        FileController.shared.deleteData(.authorizationData)
+                        authObj.setViewState(.unavailable)
+                    }
+
                 } onRefuse: {
                     //..
                 }

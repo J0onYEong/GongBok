@@ -14,9 +14,10 @@ struct FirstCheckingScreen: View {
         Group {
             switch authentication.tokenCheckingState {
                 case .checking:
-                    Text("알아보는 중....")
+                    Text("")
                 case .available:
                     TabScreen()
+                        .transition(.slide)
                 case .unavailable:
                     LoginScreen()
                         .transition(.slide)
