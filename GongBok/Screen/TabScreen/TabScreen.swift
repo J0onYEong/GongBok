@@ -8,30 +8,35 @@
 import SwiftUI
 
 struct TabScreen: View {
-    @State private var tabSelection = 0
+    @State private var tabSelection = 3
     
     var body: some View {
-        TabView {
+        TabView(selection: $tabSelection) {
             Text("The First Tab")
                 .tabItem {
                     Image(systemName: "plus.square")
                 }
+                .tag(1)
             ReviewScreen()
                 .tabItem {
                     Image(systemName: "book")
                 }
+                .tag(2)
             HomeScreen()
                 .tabItem {
                     Image(systemName: "house")
                 }
+                .tag(3)
             Text("Calander")
                 .tabItem {
                     Image(systemName: "calendar")
                 }
+                .tag(4)
             MyPageScreen()
                 .tabItem {
                     Image(systemName: "gearshape")
                 }
+                .tag(5)
         }
         .onAppear {
             UITabBar.appearance().backgroundColor = UIColor(hex: "D7CCBD")!
