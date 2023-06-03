@@ -22,32 +22,13 @@ class LoginScreenViewModel: NavigationController<LoginScreenViewState> {
     }
     
     func registerPersonalData(completion: (() -> ())?) {
-        let userInfo = UserInfo(nickname: self.nickName, birthYear: self.birthYear)
-        
-        guard let accessToken = FileController.shared.getData(.authorizationData, type: ServerAuthDataResponse.self)?.accessToken else {
-            print("토큰없음")
-            return;
-        }
-        
-        guard let sendData = try? JSONEncoder().encode(userInfo) else {
-            return;
-        }
-        
-        let url = APIUrl.personalDataSave
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = HTTPMethod.patch.rawValue
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpBody = sendData
-        
-        AF.request(request).responseData { response in
-            switch response.result {
+        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .patch, reponseType: NoReponseBody.self, sendData: UserInfo(nickname: self.nickName, birthYear: self.birthYear)) { [weak self] result in
+            switch result {
             case .success(_):
                 completion?()
-                self.popTopView()
+                self?.popTopView()
             case .failure(let error):
-                print("Error in Patch: \(error)")
+                print("유저정보 최초등록 에러: \(error)")
             }
         }
     }
