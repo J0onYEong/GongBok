@@ -70,14 +70,18 @@ struct HomeScreen: View {
                             Text("Lv \(viewModel.testData.level).")
                                 .font(Font.system(size: 25, weight: .bold))
                         }
-                        VStack {
+                        GeometryReader { geo1 in
                             HStack {
-                                SpeechBubbleView()
-                                    .frame(width: geo.size.width/2)
+                                GeometryReader { geo2 in
+                                    SpeechBubbleView()
+                                        .position(x: geo2.size.width/2, y: geo2.size.height*(1/3))
+                                }
                                 Spacer()
+                                    .frame(width: geo1.size.width/2)
+                                
                             }
-                            .padding(.top, 110)
-                            Spacer()
+                            .frame(width: geo1.size.width, height: geo1.size.height)
+                            .position(x: geo.size.width/2, y: geo1.size.height/2)
                         }
                     }
                     .frame(height: geo.size.height/2)

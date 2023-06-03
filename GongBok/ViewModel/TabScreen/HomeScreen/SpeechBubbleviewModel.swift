@@ -9,9 +9,9 @@ import Foundation
 
 
 class SpeechBuubleViewModel: ObservableObject {
-    @Published var bubbleText = ""
+    @Published private(set) var bubbleText = ""
     
-    let bubbleData = [
+    private let bubbleData = [
         "오늘도 열심히 해보자!",
         "얼른 복습하자!",
         "복습! 복습! 복습!"

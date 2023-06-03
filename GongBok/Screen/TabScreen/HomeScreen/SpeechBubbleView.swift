@@ -10,6 +10,8 @@ import SwiftUI
 struct BezierCurveShape: Shape, InsettableShape {
     var insetAmount = 0.0
     
+    var pointInset = 0.94
+    
     func inset(by amount: CGFloat) -> some InsettableShape {
         var shape = self
         shape.insetAmount += amount
@@ -34,7 +36,7 @@ struct BezierCurveShape: Shape, InsettableShape {
     
         path.addCurve(to: endPoint, control1: controlPoint1, control2: controlPoint2)
 
-        path.addLine(to: CGPoint(x: rect.maxX-insetAmount, y: rect.maxY-insetAmount))
+        path.addLine(to: CGPoint(x: (rect.maxX-insetAmount)*pointInset, y: (rect.maxY-insetAmount)*pointInset))
 
         startPoint = CGPoint(x: rect.midX*(3/2), y: rect.midY*(7/4))
         endPoint = CGPoint(x: rect.midX, y: rect.maxY-insetAmount)
@@ -65,7 +67,7 @@ struct BezierCurveShape: Shape, InsettableShape {
 }
 struct SpeechBubbleView: View {
     
-    @StateObject var viewModel = SpeechBuubleViewModel()
+    @StateObject private var viewModel = SpeechBuubleViewModel()
     
     var body: some View {
         Text(viewModel.bubbleText)
@@ -78,8 +80,8 @@ struct SpeechBubbleView: View {
                     .aspectRatio(1.5, contentMode: .fill)
                     .onAppear {
                         viewModel.startBubbleText()
-                        
                     })
+            .animation(.spring(response: 0.3, dampingFraction: 0.5), value: viewModel.bubbleText)
     }
 }
 
