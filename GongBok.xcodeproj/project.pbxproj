@@ -29,6 +29,8 @@
 		9BA2D4622A2752B200D2EB01 /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */; };
 		9BA82C602A28885A006C7287 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA82C5F2A28885A006C7287 /* ServerResponse.swift */; };
 		9BAF26082A13667500E50FB7 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF26072A13667500E50FB7 /* StarView.swift */; };
+		9BC295872A2B721200F6DF14 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC295862A2B721200F6DF14 /* SpeechBubbleView.swift */; };
+		9BC2958A2A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC295892A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift */; };
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
 		9BFE039F2A10AA2D00E105D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039E2A10AA2D00E105D5 /* Preview Assets.xcassets */; };
@@ -73,6 +75,8 @@
 		9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
 		9BA82C5F2A28885A006C7287 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		9BAF26072A13667500E50FB7 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		9BC295862A2B721200F6DF14 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
+		9BC295892A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleviewModel.swift; sourceTree = "<group>"; };
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
 		9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			children = (
 				9BFE03DA2A10C26C00E105D5 /* HomeScreen.swift */,
 				9BAF26072A13667500E50FB7 /* StarView.swift */,
+				9BC295862A2B721200F6DF14 /* SpeechBubbleView.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -155,6 +160,15 @@
 				9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9BC295882A2B98D600F6DF14 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */,
+				9BC295892A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		9BFE038B2A10AA2B00E105D5 = {
@@ -282,7 +296,7 @@
 		9BFE03DC2A10C58100E105D5 /* TabScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9BFE03DD2A10C59C00E105D5 /* HomeScreenController.swift */,
+				9BC295882A2B98D600F6DF14 /* HomeScreen */,
 				9B7809CC2A1996D900A63B66 /* ReviewScreenController.swift */,
 				9B7809D42A1A2F2A00A63B66 /* StudyContentViewController.swift */,
 				9B7C942A2A22E68100E18C7E /* SettingScreenController.swift */,
@@ -378,6 +392,8 @@
 			files = (
 				9BFE03BF2A10AB2D00E105D5 /* FirstCheckingScreen.swift in Sources */,
 				9BAF26082A13667500E50FB7 /* StarView.swift in Sources */,
+				9BC295872A2B721200F6DF14 /* SpeechBubbleView.swift in Sources */,
+				9BC2958A2A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift in Sources */,
 				9BFE03D92A10B7BF00E105D5 /* TabScreen.swift in Sources */,
 				9B7C94292A22E39500E18C7E /* NotiSettingView.swift in Sources */,
 				9BFE03B92A10AB2D00E105D5 /* KakaoSocialLogin.swift in Sources */,

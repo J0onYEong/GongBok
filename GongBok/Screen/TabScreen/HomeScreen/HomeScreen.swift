@@ -58,16 +58,27 @@ struct HomeScreen: View {
             
             GeometryReader { geo in
                 VStack {
-                    VStack {
-                        Spacer()
-                        
-                        Image("gongboke_idle")
-                            .resizable()
-                            .frame(width: 150, height: 190)
+                    ZStack {
+                        VStack {
+                            Spacer()
                             
-                        
-                        Text("Lv \(viewModel.testData.level).")
-                            .font(Font.system(size: 25, weight: .bold))
+                            Image("gongboke_idle")
+                                .resizable()
+                                .frame(width: 150, height: 190)
+                                
+                            
+                            Text("Lv \(viewModel.testData.level).")
+                                .font(Font.system(size: 25, weight: .bold))
+                        }
+                        VStack {
+                            HStack {
+                                SpeechBubbleView()
+                                    .frame(width: geo.size.width/2)
+                                Spacer()
+                            }
+                            .padding(.top, 110)
+                            Spacer()
+                        }
                     }
                     .frame(height: geo.size.height/2)
                     .padding(.top, 50)
