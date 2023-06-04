@@ -67,7 +67,7 @@ struct BezierCurveShape: Shape, InsettableShape {
 }
 struct SpeechBubbleView: View {
     
-    @StateObject private var viewModel = SpeechBuubleViewModel()
+    @ObservedObject private var viewModel = SpeechBuubleViewModel()
     
     var body: some View {
         Text(viewModel.bubbleText)
@@ -78,10 +78,14 @@ struct SpeechBubbleView: View {
                 BezierCurveShape()
                     .strokeBorder(.black, lineWidth: 1.5)
                     .aspectRatio(1.5, contentMode: .fill)
-                    .onAppear {
-                        viewModel.startBubbleText()
-                    })
+            )
             .animation(.spring(response: 0.3, dampingFraction: 0.5), value: viewModel.bubbleText)
+            .onAppear {
+                viewModel.startBubbleText()
+            }
+            .onDisappear {
+                viewModel.stopBubbleText()
+            }
     }
 }
 

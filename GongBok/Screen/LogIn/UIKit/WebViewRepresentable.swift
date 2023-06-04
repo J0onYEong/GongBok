@@ -80,7 +80,9 @@ class Coordinator: NSObject, WKNavigationDelegate {
                         self.parent.viewModel.addToStack(destination: .userInfo)
                     } else {
                         self.parent.viewModel.popTopView()
-                        self.parent.authObj.setViewState(.available)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
+                            self.parent.authObj.setViewState(.available)
+                        }
                     }
                 } catch {
                     print(error.localizedDescription)
