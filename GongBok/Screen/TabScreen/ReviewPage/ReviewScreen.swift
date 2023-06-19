@@ -21,7 +21,6 @@ struct ReviewScreen: View {
                         Button {
                             
                             //!!!api요청(임시 로컬 구현)
-                            print(item)
                             controller.getWeekNumList(sub: item)
                             
                             //임시
@@ -48,6 +47,14 @@ struct ReviewScreen: View {
                     case .quiz(let id):
                         QuizScreen(id: id)
                             .navigationBarBackButtonHidden()
+                    case .quizDetail(let id):
+                        switch (id) {
+                            case "blank":
+                                BlankQuizScreen1()
+                                .navigationBarBackButtonHidden()
+                            default:
+                                Text("")
+                    }
                 }
             }
         }

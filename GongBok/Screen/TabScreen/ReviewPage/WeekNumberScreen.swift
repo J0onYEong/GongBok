@@ -56,7 +56,6 @@ struct WeekNumberScreen: View {
                         Button {
                             //임시
                             let id = subject+item
-                            controller.getQuizData(id: id)
                             controller.addToStack(destination: .quiz(id: id))
                         } label: {
                             ItemLabelView(color: .white, text: "\(item)차시")
