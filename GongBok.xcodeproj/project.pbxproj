@@ -35,6 +35,7 @@
 		9BDDDE892A40786C000CD942 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDDE882A40786C000CD942 /* Quiz.swift */; };
 		9BDDDE8B2A407F9F000CD942 /* BlankQuiz1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDDE8A2A407F9F000CD942 /* BlankQuiz1ViewModel.swift */; };
 		9BDDDE8E2A409A7F000CD942 /* DiagonalShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDDE8D2A409A7E000CD942 /* DiagonalShape.swift */; };
+		9BEFE5F42A4496100025FAC9 /* PopupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFE5F32A4496100025FAC9 /* PopupTextView.swift */; };
 		9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */; };
 		9BFE039C2A10AA2D00E105D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */; };
 		9BFE039F2A10AA2D00E105D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFE039E2A10AA2D00E105D5 /* Preview Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		9BDDDE882A40786C000CD942 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		9BDDDE8A2A407F9F000CD942 /* BlankQuiz1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankQuiz1ViewModel.swift; sourceTree = "<group>"; };
 		9BDDDE8D2A409A7E000CD942 /* DiagonalShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagonalShape.swift; sourceTree = "<group>"; };
+		9BEFE5F32A4496100025FAC9 /* PopupTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupTextView.swift; sourceTree = "<group>"; };
 		9BFE03942A10AA2B00E105D5 /* GongBok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GongBok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFE03972A10AA2B00E105D5 /* GongBokApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongBokApp.swift; sourceTree = "<group>"; };
 		9BFE039B2A10AA2D00E105D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		9BDDDE822A3F0E39000CD942 /* QuizScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9BEFE5F52A4496180025FAC9 /* View */,
 				9B7809D02A1A0DF000A63B66 /* QuizScreen.swift */,
 				9BDDDE832A3F0EDA000CD942 /* BlankQuizScreen1.swift */,
 			);
@@ -202,6 +205,14 @@
 			isa = PBXGroup;
 			children = (
 				9BDDDE8D2A409A7E000CD942 /* DiagonalShape.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BEFE5F52A4496180025FAC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BEFE5F32A4496100025FAC9 /* PopupTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,6 +455,7 @@
 				9BDDDE8B2A407F9F000CD942 /* BlankQuiz1ViewModel.swift in Sources */,
 				9BFE03DB2A10C26C00E105D5 /* HomeScreen.swift in Sources */,
 				9BFE03B82A10AB2D00E105D5 /* FileController.swift in Sources */,
+				9BEFE5F42A4496100025FAC9 /* PopupTextView.swift in Sources */,
 				9B7809D32A1A10CD00A63B66 /* StudyContentView.swift in Sources */,
 				9B7C94342A2313EF00E18C7E /* ProfileEditScreen.swift in Sources */,
 				9BFE03BE2A10AB2D00E105D5 /* UserInformationView.swift in Sources */,

@@ -63,47 +63,60 @@ struct BlankQuizScreen1: View {
                 .frame(height: 30)
                 .padding(.top, 40)
                 
-                ZStack {
-                    RoundedRectangle(cornerRadius: 30)
-                        .strokeBorder(lineWidth: 1.0)
-                        .foregroundColor(.gray)
-                    
-                    TextField("", text: $viewModel.inputStr)
-                        .textInputAutocapitalization(.never)
-                        .autocorrectionDisabled(true)
-                        .autocorrectionDisabled()
-                        .multilineTextAlignment(.center)
-                        .focused($focusState)
-                        .toolbar {
-                            ToolbarItemGroup(placement: .keyboard) {
-                                Spacer()
+                GeometryReader { geo in
+                    ZStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 30)
+                                .strokeBorder(lineWidth: 1.0)
+                                .foregroundColor(.gray)
+                                .zIndex(0)
+                            
+                            TextField("", text: $viewModel.inputStr)
+                                .textInputAutocapitalization(.never)
+                                .autocorrectionDisabled(true)
+                                .autocorrectionDisabled()
+                                .multilineTextAlignment(.center)
+                                .focused($focusState)
+                                .toolbar {
+                                    ToolbarItemGroup(placement: .keyboard) {
+                                        Spacer()
 
-                                Button {
-                                    viewModel.focusState = false
-                                } label: {
-                                    Text("닫기")
-                                        .font(Font.system(size: 20))
-                                        .frame(height: 20)
+                                        Button {
+                                            viewModel.focusState = false
+                                        } label: {
+                                            Text("닫기")
+                                                .font(Font.system(size: 20))
+                                                .frame(height: 20)
+                                                .foregroundColor(.black)
+                                                .padding(.vertical, 5)
+                                                .padding(.horizontal, 15)
+                                                .background(
+                                                    RoundedRectangle(cornerRadius: 15)
+                                                        .fill(Color.background)
+                                                )
+                                        }
                                         .foregroundColor(.black)
-                                        .padding(.vertical, 5)
-                                        .padding(.horizontal, 15)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 15)
-                                                .fill(Color.background)
-                                        )
+                                    }
                                 }
-                                .foregroundColor(.black)
-                            }
+                                .zIndex(1)
                         }
+                        .frame(height: 250)
+                        .padding(.top, 40)
+                        .padding(.horizontal, 20)
+                        
+                        if viewModel.state == .correct {
+                            PopupTextView(text: "테스트", duration: 1.0)
+                                .position(x: geo.size.width/2, y: geo.size.height*0.75)
+                            
+                        }
+                    }
+                    .position(x: geo.size.width/2, y: geo.size.height/2)
                 }
-                .frame(height: 250)
-                .padding(.top, 40)
-                .padding(.horizontal, 20)
                 
                 Spacer()
                 
                 if viewModel.state == .correct {
-                    Text("정답")
+                    Text("정답!")
                         .font(Font.system(size: 20, weight: .bold))
                         .frame(height: 20)
                 }
@@ -122,7 +135,6 @@ struct BlankQuizScreen1: View {
                     .frame(height: 20)
                     
                 }
-                
                 
                 Spacer()
                 
