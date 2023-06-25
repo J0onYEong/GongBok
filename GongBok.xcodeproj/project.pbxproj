@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B1786D52A4860C100D4D987 /* RightAnswerCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1786D42A4860C100D4D987 /* RightAnswerCircleView.swift */; };
+		9B1786D82A4865C700D4D987 /* BlankQuizScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1786D72A4865C700D4D987 /* BlankQuizScreen2.swift */; };
 		9B552D282A2123F000589537 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B552D272A2123F000589537 /* TransitionExtension.swift */; };
 		9B7809C72A18768F00A63B66 /* ItemLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809C62A18768F00A63B66 /* ItemLabelView.swift */; };
 		9B7809C92A187B4B00A63B66 /* ReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809C82A187B4B00A63B66 /* ReviewScreen.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		9B1786D42A4860C100D4D987 /* RightAnswerCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightAnswerCircleView.swift; sourceTree = "<group>"; };
+		9B1786D72A4865C700D4D987 /* BlankQuizScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankQuizScreen2.swift; sourceTree = "<group>"; };
 		9B552D272A2123F000589537 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		9B7809C62A18768F00A63B66 /* ItemLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLabelView.swift; sourceTree = "<group>"; };
 		9B7809C82A187B4B00A63B66 /* ReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreen.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				9BEFE5F52A4496180025FAC9 /* View */,
 				9B7809D02A1A0DF000A63B66 /* QuizScreen.swift */,
 				9BDDDE832A3F0EDA000CD942 /* BlankQuizScreen1.swift */,
+				9B1786D72A4865C700D4D987 /* BlankQuizScreen2.swift */,
 			);
 			path = QuizScreen;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				9B7C94382A231A5700E18C7E /* ConfirmationModalView.swift in Sources */,
 				9B7809D12A1A0DF000A63B66 /* QuizScreen.swift in Sources */,
 				9B552D282A2123F000589537 /* TransitionExtension.swift in Sources */,
+				9B1786D82A4865C700D4D987 /* BlankQuizScreen2.swift in Sources */,
 				9B7809C72A18768F00A63B66 /* ItemLabelView.swift in Sources */,
 				9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */,
 				9B7809CD2A1996D900A63B66 /* ReviewScreenController.swift in Sources */,

@@ -59,9 +59,13 @@ struct BlankQuizScreen1: View {
                     ZStack {
                         ZStack {
                             RoundedRectangle(cornerRadius: 30)
+                                .foregroundColor(.white)
+                                .zIndex(0)
+                            
+                            RoundedRectangle(cornerRadius: 30)
                                 .strokeBorder(lineWidth: 1.0)
                                 .foregroundColor(.gray)
-                                .zIndex(0)
+                                .zIndex(1)
                             
                             TextField("", text: $viewModel.inputStr)
                                 .textInputAutocapitalization(.never)
@@ -91,9 +95,13 @@ struct BlankQuizScreen1: View {
                                         .foregroundColor(.black)
                                     }
                                 }
-                                .zIndex(1)
+                                .zIndex(2)
                         }
-                        .frame(height: geo.size.height * 5/6)
+                        .onTapGesture {
+                            viewModel.focusState = true
+                        }
+                        .frame(height: 200)
+                        .contentShape(Rectangle())
                         .padding(.top, 40)
                         .padding(.horizontal, 20)
                         
@@ -105,7 +113,7 @@ struct BlankQuizScreen1: View {
                     }
                     .position(x: geo.size.width/2, y: geo.size.height/2)
                 }
-                .frame(maxHeight: 300)
+                .frame(minHeight: 200, maxHeight: 300)
                 
                 Spacer()
                 
