@@ -10,8 +10,8 @@ import SwiftUI
 struct BlankQuizScreen1: View {
     @EnvironmentObject var controller: ReviewScreenController
     @ObservedObject private var viewModel = BlankQuiz1ViewModel()
-    
     @FocusState private var focusState
+
     
     var body: some View {
         ChildScreenBase(controller: controller) {
@@ -37,28 +37,20 @@ struct BlankQuizScreen1: View {
                     Text(viewModel.quizString)
                         .font(Font.system(size: 20, weight: .semibold))
                         .zIndex(0)
-                    if viewModel.state == .correct {
-                        HStack {
-                            Circle()
-                                .strokeBorder(lineWidth: 1.5)
-                                .foregroundColor(.red)
-                                .frame(width: 40, height: 40)
+                    HStack {
+                        if viewModel.state == .correct {
+                            RightAnswerCircleView()
+                                .frame(width: 40)
                                 .padding(.leading, 30)
-                            
-                            Spacer()
                         }
-                        .zIndex(1)
-                    }
-                    if viewModel.state == .wrong {
-                        HStack {
-                            DiagonalLine()
-                                .stroke(Color.red, lineWidth: 1.0)
-                                .frame(width: 50, height: 30)
+                        if viewModel.state == .wrong {
+                            WrongAnswerCrossView()
+                                .frame(width: 50)
                                 .padding(.leading, 30)
-                            Spacer()
                         }
-                        .zIndex(1)
+                        Spacer()
                     }
+                    .zIndex(1)
                 }
                 .frame(height: 30)
                 .padding(.top, 40)
@@ -77,6 +69,7 @@ struct BlankQuizScreen1: View {
                                 .autocorrectionDisabled()
                                 .multilineTextAlignment(.center)
                                 .focused($focusState)
+                                .disabled(viewModel.state != .input)
                                 .toolbar {
                                     ToolbarItemGroup(placement: .keyboard) {
                                         Spacer()
@@ -100,7 +93,7 @@ struct BlankQuizScreen1: View {
                                 }
                                 .zIndex(1)
                         }
-                        .frame(height: 250)
+                        .frame(height: geo.size.height * 5/6)
                         .padding(.top, 40)
                         .padding(.horizontal, 20)
                         
@@ -112,29 +105,42 @@ struct BlankQuizScreen1: View {
                     }
                     .position(x: geo.size.width/2, y: geo.size.height/2)
                 }
+                .frame(maxHeight: 300)
                 
                 Spacer()
                 
-                if viewModel.state == .correct {
-                    Text("정답!")
-                        .font(Font.system(size: 20, weight: .bold))
-                        .frame(height: 20)
+                ZStack {
+                    Rectangle()
+                        .fill(.clear)
+                        .frame(height: 30)
+                        .zIndex(0)
+                    Group {
+                        if viewModel.state == .correct {
+                            Text("정답!")
+                                .font(Font.system(size: 20, weight: .bold))
+                                .frame(height: 20)
+                        }
+                        
+                        if viewModel.state == .wrong {
+                            
+                            (
+                                Text("오답! 정답은 ")
+                                    .font(Font.system(size: 20, weight: .bold))
+                                    .foregroundColor(.black)
+                                +
+                                Text(viewModel.answer)
+                                    .font(Font.system(size: 20, weight: .bold))
+                                    .foregroundColor(.blue)
+                            )
+                            .frame(height: 20)
+                            
+                        }
+                    }
+                    .zIndex(1)
+                    .transition(.asymmetric(insertion: .customSlide(from: CGPoint(x: 0, y: -30), to: CGPoint(x: 0, y: 0), state: .insertion), removal: .customSlide(from: CGPoint(x: 0, y: 0), to: CGPoint(x: 0, y: -30), state: .removal)))
+                    .animation(.easeIn(duration: 0.3), value: viewModel.state)
                 }
-                
-                if viewModel.state == .wrong {
-                    
-                    (
-                        Text("오답! 정답은 ")
-                            .font(Font.system(size: 20, weight: .bold))
-                            .foregroundColor(.black)
-                        +
-                        Text(viewModel.answer)
-                            .font(Font.system(size: 20, weight: .bold))
-                            .foregroundColor(.blue)
-                    )
-                    .frame(height: 20)
-                    
-                }
+                .clipShape(Rectangle())
                 
                 Spacer()
                 

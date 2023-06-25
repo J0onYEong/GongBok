@@ -16,20 +16,36 @@ struct HorizontalScaleShape: ViewModifier {
 }
 
 struct OffsetedShape: ViewModifier {
-    var pos: CGSize
+    var pos: CGPoint
     
     func body(content: Content) -> some View {
-        content.offset(pos)
+        content.offset(x: pos.x, y: pos.y)
     }
 }
 
 extension AnyTransition {
-    
+    enum State {
+        case insertion, removal
+    }
+}
+
+extension AnyTransition {
     static func openSildeEffect() -> AnyTransition {
         return .modifier(active: HorizontalScaleShape(percent: 0.0), identity: HorizontalScaleShape(percent: 1.0))
     }
-    
-    static func customSlideEffect(pos: CGSize) -> AnyTransition {
-        return .modifier(active: OffsetedShape(pos: pos), identity: OffsetedShape(pos: CGSize(width: 0, height: 0)))
-    }
+
 }
+
+
+// MARK: - 커스텀 슬라이드
+extension AnyTransition {
+    static func customSlide(from: CGPoint, to: CGPoint, state: State) -> AnyTransition {
+        if state == .insertion {
+            return .modifier(active: OffsetedShape(pos: from), identity: OffsetedShape(pos: to))
+        }
+        return .modifier(active: OffsetedShape(pos: to), identity: OffsetedShape(pos: from))
+    }
+    
+}
+
+

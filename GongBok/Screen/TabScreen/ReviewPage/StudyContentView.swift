@@ -77,7 +77,7 @@ struct StudyContentView: View {
                         }
                         .padding(.bottom, 5)
                     }
-                    .transition(.customSlideEffect(pos: CGSize(width: 0, height: -200)))
+                    .transition(.customSlide(from: CGPoint(x: 0, y: -200), to: CGPoint(x: 0, y: 0), state: .insertion))
                 }
             }
             .clipShape(Rectangle())
