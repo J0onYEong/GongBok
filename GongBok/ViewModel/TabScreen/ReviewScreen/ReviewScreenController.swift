@@ -10,27 +10,39 @@ import Foundation
 enum ReviewScreenViewState: Hashable {
     case weekNumber(name: String)
     case quiz(id: String)
-}
-
-struct TestQuizData {
-    var reviewText: String
-}
-
-struct ReviewScreenTestData {
-    static var subjects = ["파이썬", "피그마", "스프링"]
-    static var weekNumber: [String : [String]] = [:]
-    static var quizData: [String: TestQuizData] = [:]
+    case quizDetail(id: String)
 }
 
 class ReviewScreenController: NavigationController<ReviewScreenViewState> {
     @Published private(set) var subject: [String] = []
     @Published private(set) var weekNumber: [String] = []
-    @Published var quizData = TestQuizData(reviewText: "")
     
+    let quizTypes = [
+        "choice" : "객관식 개념 퀴즈",
+        "descriptive" : "서술형 요약 퀴즈",
+        "short" : "단답형 개념 퀴즈",
+        "blank" : "빈칸 퀴즈",
+        "yesNo" : "참/거짓 개념 퀴즈",
+        "reference" : "관련 자료",
+        "review" : "틀린 문제 정리",
+    ]
+    
+}
+
+struct ReviewScreenTestData {
+    static var subjects = ["파이썬", "피그마", "스프링"]
+    static var weekNumber: [String : [String]] = [:]
+}
+
+// MARK: - 과목
+extension ReviewScreenController {
     func getSubject() {
         subject = ReviewScreenTestData.subjects
     }
-    
+}
+
+// MARK: - 차시
+extension ReviewScreenController {
     func getWeekNumList(sub: String) {
         if let list = ReviewScreenTestData.weekNumber[sub] {
             weekNumber = list
@@ -51,23 +63,11 @@ class ReviewScreenController: NavigationController<ReviewScreenViewState> {
         ReviewScreenTestData.weekNumber[sub] = weekNumber
     }
     
-    //차시 삭제 + 퀴즈 데이터 삭제
+    //차시 삭제
     func deleteWeekNumberElement(sub: String) {
         
     }
-    
-    func getQuizData(id: String){
-        if let data = ReviewScreenTestData.quizData[id] {
-            quizData = data
-            return;
-        }
-        quizData = TestQuizData(reviewText: "")
-        ReviewScreenTestData.quizData[id] = quizData
-    }
-    
-    //submit눌렀을때 테스트데이터에 반영
-    func submitQuizData(id: String) {
-        ReviewScreenTestData.quizData[id] = quizData
-    }
 }
+
+// MARK: - 퀴즈
 

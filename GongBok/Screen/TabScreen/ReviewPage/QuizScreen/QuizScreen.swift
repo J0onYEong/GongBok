@@ -8,18 +8,10 @@
 import SwiftUI
 
 struct QuizScreen: View {
-    var id: String
-    @EnvironmentObject var controller: ReviewScreenController
     
-    var quizTypes = [
-        "객관식 개념 퀴즈",
-        "서술형 요약 퀴즈",
-        "단답형 개념 퀴즈",
-        "빈칸 퀴즈",
-        "참/거짓 개념 퀴즈",
-        "관련 자료",
-        "틀린 문제 정리",
-    ]
+    var id: String
+    
+    @EnvironmentObject var controller: ReviewScreenController
     
     var body: some View {
         VStack {
@@ -40,11 +32,11 @@ struct QuizScreen: View {
             ScrollView {
                 StudyContentView(id: id)
                     .padding(20)
-                ForEach(Array(quizTypes.enumerated()), id: \.element) { index, element in
+                ForEach(Array(controller.quizTypes.enumerated()), id: \.element.key) { index, element in
                     Button {
-                        
+                        controller.addToStack(destination: .quizDetail(id: element.key))
                     } label: {
-                        ItemLabelView(color: .white, text: element)
+                        ItemLabelView(color: .white, text: element.value)
                             .frame(height: 60)
                             .padding(.bottom, 20)
                             .foregroundColor(.black)
