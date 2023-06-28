@@ -17,7 +17,7 @@ struct ItemLabelView: View {
     var text: String
     
     var image: Image = Image(systemName: "chevron.right")
-    var showImage = true
+    var showArrow = true
     
     var alignment: LabelTextAlignment = .center
     
@@ -34,7 +34,7 @@ struct ItemLabelView: View {
             }
             .padding([.vertical], 20)
             .padding(.leading, alignment == .center ? 0 : 30)
-            if showImage {
+            if showArrow {
                 HStack {
                     Spacer()
                     image

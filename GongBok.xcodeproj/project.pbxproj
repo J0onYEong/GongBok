@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9B1786D52A4860C100D4D987 /* RightAnswerCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1786D42A4860C100D4D987 /* RightAnswerCircleView.swift */; };
 		9B1786D82A4865C700D4D987 /* BlankQuizScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1786D72A4865C700D4D987 /* BlankQuizScreen2.swift */; };
+		9B1786DA2A4C12A400D4D987 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1786D92A4C12A400D4D987 /* NewSubjectView.swift */; };
+		9B1786DC2A4C20AA00D4D987 /* NewSubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1786DB2A4C20AA00D4D987 /* NewSubjectViewModel.swift */; };
 		9B552D282A2123F000589537 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B552D272A2123F000589537 /* TransitionExtension.swift */; };
 		9B7809C72A18768F00A63B66 /* ItemLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809C62A18768F00A63B66 /* ItemLabelView.swift */; };
 		9B7809C92A187B4B00A63B66 /* ReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7809C82A187B4B00A63B66 /* ReviewScreen.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		9B1786D42A4860C100D4D987 /* RightAnswerCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightAnswerCircleView.swift; sourceTree = "<group>"; };
 		9B1786D72A4865C700D4D987 /* BlankQuizScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankQuizScreen2.swift; sourceTree = "<group>"; };
+		9B1786D92A4C12A400D4D987 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
+		9B1786DB2A4C20AA00D4D987 /* NewSubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectViewModel.swift; sourceTree = "<group>"; };
 		9B552D272A2123F000589537 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		9B7809C62A18768F00A63B66 /* ItemLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLabelView.swift; sourceTree = "<group>"; };
 		9B7809C82A187B4B00A63B66 /* ReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreen.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			children = (
 				9B7809CC2A1996D900A63B66 /* ReviewScreenController.swift */,
 				9BDDDE8A2A407F9F000CD942 /* BlankQuiz1ViewModel.swift */,
+				9B1786DB2A4C20AA00D4D987 /* NewSubjectViewModel.swift */,
 			);
 			path = ReviewScreen;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			children = (
 				9BDDDE8D2A409A7E000CD942 /* WrongAnswerCrossView.swift */,
 				9B1786D42A4860C100D4D987 /* RightAnswerCircleView.swift */,
+				9B1786D92A4C12A400D4D987 /* NewSubjectView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				9BFE03BC2A10AB2D00E105D5 /* AuthenticationObject.swift in Sources */,
 				9B7C942D2A22E7F900E18C7E /* ResignScreen.swift in Sources */,
 				9BA2D4622A2752B200D2EB01 /* WebViewRepresentable.swift in Sources */,
+				9B1786DA2A4C12A400D4D987 /* NewSubjectView.swift in Sources */,
 				9BDDDE842A3F0EDA000CD942 /* BlankQuizScreen1.swift in Sources */,
 				9BDDDE8E2A409A7F000CD942 /* WrongAnswerCrossView.swift in Sources */,
 				9BFE03DE2A10C59C00E105D5 /* HomeScreenController.swift in Sources */,
@@ -484,6 +491,7 @@
 				9BFE03982A10AA2B00E105D5 /* GongBokApp.swift in Sources */,
 				9B7809CD2A1996D900A63B66 /* ReviewScreenController.swift in Sources */,
 				9B7809CF2A19A19E00A63B66 /* WeekNumberScreen.swift in Sources */,
+				9B1786DC2A4C20AA00D4D987 /* NewSubjectViewModel.swift in Sources */,
 				9BFE03CD2A10ADEF00E105D5 /* BundleExtension.swift in Sources */,
 				9B7809CB2A19947500A63B66 /* ApiRequest.swift in Sources */,
 				9B7809C92A187B4B00A63B66 /* ReviewScreen.swift in Sources */,

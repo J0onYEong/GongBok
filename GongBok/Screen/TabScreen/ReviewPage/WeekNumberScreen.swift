@@ -10,10 +10,7 @@ import SwiftUI
 struct WeekNumberScreen: View {
     @EnvironmentObject var controller: ReviewScreenController
     var subject: String
-    
-    var weekNumber: [String] {
-        return controller.weekNumber + ["AddButton"]
-    }
+
     
     var body: some View {
         VStack {
@@ -39,35 +36,32 @@ struct WeekNumberScreen: View {
             .font(Font.system(size: 25, weight: .bold))
             .padding(.top, 20)
             ScrollView {
-                ForEach(Array(weekNumber.enumerated()), id: \.element) { index, item in
-                    if item == "AddButton" {
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.2)) {
-                                controller.addWeekNumElement(sub: subject)
-                            }
-                        } label: {
-                            ItemLabelView(color: .background, text: "+", showImage: false)
-                                .frame(height: 60)
-                                .padding(.bottom, 20)
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.top, index == 0 ? 50 : 0)
-                    } else {
-                        Button {
-                            //임시
-                            let id = subject+item
-                            controller.addToStack(destination: .quiz(id: id))
-                        } label: {
-                            ItemLabelView(color: .white, text: "\(item)차시")
-                                .frame(height: 60)
-                                .padding(.bottom, 20)
-                                .foregroundColor(.black)
-                        }
-                        .padding(.top, index == 0 ? 50 : 0)
+                ForEach(Array(controller.weekNumber.enumerated()), id: \.element) { index, item in
+                    Button {
+                        //임시
+                        let id = subject+item
+                        controller.addToStack(destination: .quiz(id: id))
+                    } label: {
+                        ItemLabelView(color: .white, text: "\(item)차시")
+                            .frame(height: 60)
+                            .padding(.bottom, 20)
+                            .foregroundColor(.black)
                     }
+                }
+                
+                Button {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        controller.addWeekNumElement(sub: subject)
+                    }
+                } label: {
+                    ItemLabelView(color: .background, text: "+", showArrow: false)
+                        .frame(height: 60)
+                        .padding(.bottom, 20)
+                        .foregroundColor(.gray)
                 }
             }
             .padding([.horizontal], 20)
+            .padding(.top, 50)
         }
         .onAppear {
             print(subject)

@@ -14,7 +14,11 @@ enum ReviewScreenViewState: Hashable {
 }
 
 class ReviewScreenController: NavigationController<ReviewScreenViewState> {
+    //ReviewScreen
     @Published private(set) var subject: [String] = []
+    @Published var isShowingNewSubjectView = false
+    
+    //WeekNumberScreen
     @Published private(set) var weekNumber: [String] = []
     
     let quizTypes = [
@@ -30,7 +34,7 @@ class ReviewScreenController: NavigationController<ReviewScreenViewState> {
 }
 
 struct ReviewScreenTestData {
-    static var subjects = ["파이썬", "피그마", "스프링"]
+    static var subjects: [String] = []
     static var weekNumber: [String : [String]] = [:]
 }
 
@@ -38,6 +42,14 @@ struct ReviewScreenTestData {
 extension ReviewScreenController {
     func getSubject() {
         subject = ReviewScreenTestData.subjects
+    }
+    
+    func subjectNameValidation(name: String) -> Bool {
+        return !subject.contains(name)
+    }
+    
+    func addSubject(name: String) {
+        subject.append(name)
     }
 }
 
