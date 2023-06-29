@@ -73,7 +73,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
             
             if let responseData = result as? String, let data = responseData.data(using: .utf8) {
                 do {
-                    let decoded = try JSONDecoder().decode(ServerAuthDataResponse.self, from: data)
+                    let decoded = try JSONDecoder().decode(ServerAuth.self, from: data)
                     self.parent.authObj.setLocalAuthData(decoded)
                     //첫 접속일 경우
                     if decoded.role != nil {

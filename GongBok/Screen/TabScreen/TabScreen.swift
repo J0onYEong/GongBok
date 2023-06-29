@@ -12,11 +12,6 @@ struct TabScreen: View {
     
     var body: some View {
         TabView(selection: $tabSelection) {
-            Text("The First Tab")
-                .tabItem {
-                    Image(systemName: "plus.square")
-                }
-                .tag(1)
             ReviewScreen()
                 .tabItem {
                     Image(systemName: "book")
@@ -27,11 +22,6 @@ struct TabScreen: View {
                     Image(systemName: "house")
                 }
                 .tag(3)
-            Text("Calander")
-                .tabItem {
-                    Image(systemName: "calendar")
-                }
-                .tag(4)
             MyPageScreen()
                 .tabItem {
                     Image(systemName: "gearshape")

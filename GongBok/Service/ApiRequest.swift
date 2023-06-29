@@ -13,6 +13,13 @@ enum APIUrl: String {
     
     case kakaoLoginWeb = "oauth2/authorization/kakao"
     case personalData = "api/member"
+    case addSubject = "api/review/subject"
+    case getSubjects = "api/review/subjects"
+    
+    //get - 특정 과목아이디의 차시들을 모두 불러옴, post - 특정과목에 week를 추가함
+    func subjectWeek(to: Int) -> String {
+        return "api/review/subject/\(to)/week"
+    }
     
     func getFullString() -> String {
         Self.baseUrl + self.rawValue
@@ -36,8 +43,8 @@ struct HTTPRequest {
     
     private init() { }
     
-    func requestWithAccessToken<Recieve: Decodable>(url: APIUrl, method: HTTPMethod, reponseType: Recieve.Type, sendData: Encodable?, completion: @escaping (Result<Recieve, RequestError>) -> ()) {
-        guard let accessToken = FileController.shared.getData(.authorizationData, type: ServerAuthDataResponse.self)?.accessToken else {
+    func requestWithAccessToken<Recieve: Decodable>(url: APIUrl, method: HTTPMethod, reponseType: Recieve.Type, sendData: Encodable?, completion: @escaping (Result<Recieve?, RequestError>) -> ()) {
+        guard let accessToken = FileController.shared.getData(.authorizationData, type: ServerAuth.self)?.accessToken else {
             completion(.failure(.tokenUnavailable))
             return;
         }
@@ -57,12 +64,25 @@ struct HTTPRequest {
                 completion(.failure(.encodingError))
             }
         }
-        AF.request(request).responseDecodable(of: Recieve.self) { response in
-            switch response.result {
-            case .success(let data):
-                completion(.success(data))
-            case .failure( _ ):
-                completion(.failure(.requestError))
+        
+        
+        if reponseType == NoReponseBody.self {
+            AF.request(request).response { response in
+                switch response.result {
+                case .success:
+                    completion(.success(nil))
+                case .failure( _ ):
+                    completion(.failure(.requestError))
+                }
+            }
+        } else {
+            AF.request(request).responseDecodable(of: Recieve.self) { response in
+                switch response.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure( _ ):
+                    completion(.failure(.requestError))
+                }
             }
         }
     }

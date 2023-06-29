@@ -11,7 +11,3 @@ struct BlankQuiz1Model {
     var blankString: String
     var answer: String
 }
-
-struct BlankQuiz2Model {
-    
-}

@@ -7,14 +7,10 @@
 
 import Foundation
 
-struct ServerAuthDataResponse: Codable {
-    var role: String?
-    var accessToken: String
-    var refreshToken: String
-}
 
 
-struct UserPersonalDataReponse: Codable {
+
+struct UserDataResponse: Codable {
     var resultCode: String
     var result: UserInfo
 }

@@ -19,12 +19,15 @@ class SettingScreenController: NavigationController<SettingScreenViewState> {
     @Published var birthYear = 2000
     
     func getUserInfo() {
-        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .get, reponseType: UserPersonalDataReponse.self, sendData: nil) { [weak self] result in
+        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .get, reponseType: UserDataResponse.self, sendData: nil) { [weak self] result in
             switch result {
             case .success(let data):
+                
+                guard let unw = data else { return; }
+                
                 self?.objectWillChange.send()
-                self?.nickName = data.result.nickname
-                self?.birthYear = data.result.birthYear
+                self?.nickName = unw.result.nickname
+                self?.birthYear = unw.result.birthYear
             case .failure(let error):
                 print("설정페이지 유저정보요청 에러: \(error.rawValue)")
             }

@@ -15,7 +15,7 @@ enum ReviewScreenViewState: Hashable {
 
 class ReviewScreenController: NavigationController<ReviewScreenViewState> {
     //ReviewScreen
-    @Published private(set) var subject: [String] = []
+    @Published private(set) var subjects: [SubjectViewModel] = []
     @Published var isShowingNewSubjectView = false
     
     //WeekNumberScreen
@@ -34,22 +34,50 @@ class ReviewScreenController: NavigationController<ReviewScreenViewState> {
 }
 
 struct ReviewScreenTestData {
-    static var subjects: [String] = []
     static var weekNumber: [String : [String]] = [:]
 }
 
 // MARK: - 과목
 extension ReviewScreenController {
+    
+    struct SubjectViewModel: Hashable {
+        var name: String
+        var id: Int
+    }
+    
     func getSubject() {
-        subject = ReviewScreenTestData.subjects
+        HTTPRequest.shared.requestWithAccessToken(url: .getSubjects, method: .get, reponseType: Subjects.self, sendData: nil) { result in
+            switch result {
+            case .success(let data):
+                self.objectWillChange.send()
+                
+                guard let unw = data else { return; }
+                
+                self.subjects = unw.map({
+                    SubjectViewModel(name: $0.subjectName, id: $0.id)
+                })
+            case .failure(let failure):
+                print(failure.rawValue)
+            }
+        }
     }
     
     func subjectNameValidation(name: String) -> Bool {
-        return !subject.contains(name)
+        return subjects.filter({
+            $0.name == name
+        }).isEmpty
     }
     
     func addSubject(name: String) {
-        subject.append(name)
+        let sendData = AddSubjectRequest(subjectName: name)
+        HTTPRequest.shared.requestWithAccessToken(url: .addSubject, method: .post, reponseType: NoReponseBody.self, sendData: sendData) { result in
+            switch result {
+            case .success( _ ):
+                self.getSubject()
+            case .failure(let failure):
+                print(failure.rawValue)
+            }
+        }
     }
 }
 

@@ -18,18 +18,18 @@ struct ReviewScreen: View {
                         .font(Font.system(size: 25, weight: .bold))
                         .padding(.top, 50)
                     ScrollView {
-                        ForEach(Array(controller.subject.enumerated()), id: \.element) { index, item in
+                        ForEach(Array(controller.subjects.enumerated()), id: \.element) { index, item in
                             Button {
                                 
-                                //!!!api요청(임시 로컬 구현)
-                                controller.getWeekNumList(sub: item)
-                                
-                                //임시
-                                controller.addToStack(destination: .weekNumber(name: item))
+//                                //!!!api요청(임시 로컬 구현)
+//                                controller.getWeekNumList(sub: item)
+//
+//                                //임시
+//                                controller.addToStack(destination: .weekNumber(name: item))
                                 
                                 
                             } label: {
-                                ItemLabelView(color: .white, text: "\(item)", showArrow: false)
+                                ItemLabelView(color: .white, text: "\(item.name)", showArrow: false)
                                     .frame(height: 60)
                                     .padding(.bottom, 20)
                                     .foregroundColor(.black)
@@ -56,6 +56,7 @@ struct ReviewScreen: View {
                     ZStack {
                         Rectangle()
                             .fill(.gray.opacity(0.7))
+                            .ignoresSafeArea()
                             .zIndex(0)
                         NewSubjectView(validation: controller.subjectNameValidation(name:)) { newSubjectName in
                             
@@ -94,6 +95,7 @@ struct ReviewScreen: View {
         .onAppear {
             controller.getSubject()
         }
+        .animation(.easeInOut, value: controller.subjects)
     }
 }
 
