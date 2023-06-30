@@ -22,7 +22,7 @@ class LoginScreenViewModel: NavigationController<LoginScreenViewState> {
     }
     
     func registerPersonalData(completion: (() -> ())?) {
-        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .patch, reponseType: NoReponseBody.self, sendData: UserInfo(nickname: self.nickName, birthYear: self.birthYear)) { [weak self] result in
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.personalData, method: .patch, reponseType: NoReponseBody.self, sendData: UserInfo(nickname: self.nickName, birthYear: self.birthYear)) { [weak self] result in
             switch result {
             case .success(_):
                 completion?()

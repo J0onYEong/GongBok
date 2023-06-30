@@ -8,22 +8,21 @@
 import Foundation
 import Alamofire
 
-enum APIUrl: String {
-    static private let baseUrl = "http://43.202.26.221:8080/"
+struct APIUrl {
     
-    case kakaoLoginWeb = "oauth2/authorization/kakao"
-    case personalData = "api/member"
-    case addSubject = "api/review/subject"
-    case getSubjects = "api/review/subjects"
+    private init() { }
     
+    static let baseUrl = "http://43.202.26.221:8080/"
+    static var kakaoLoginWeb: String { baseUrl + "oauth2/authorization/kakao" }
+    static var personalData: String { baseUrl + "api/member" }
+    static var addSubject: String { baseUrl + "api/review/subject" }
+    static var getSubjects: String { baseUrl + "api/review/subjects" }
+
     //get - 특정 과목아이디의 차시들을 모두 불러옴, post - 특정과목에 week를 추가함
-    func subjectWeek(to: Int) -> String {
-        return "api/review/subject/\(to)/week"
+    static func subjectWeek(to: Int) -> String {
+        return baseUrl + "api/review/subject/\(to)/week"
     }
     
-    func getFullString() -> String {
-        Self.baseUrl + self.rawValue
-    }
 }
 
 enum RequestError: String, Error {
@@ -43,12 +42,12 @@ struct HTTPRequest {
     
     private init() { }
     
-    func requestWithAccessToken<Recieve: Decodable>(url: APIUrl, method: HTTPMethod, reponseType: Recieve.Type, sendData: Encodable?, completion: @escaping (Result<Recieve?, RequestError>) -> ()) {
+    func requestWithAccessToken<Recieve: Decodable>(urlStr: String, method: HTTPMethod, reponseType: Recieve.Type, sendData: Encodable?, completion: @escaping (Result<Recieve?, RequestError>) -> ()) {
         guard let accessToken = FileController.shared.getData(.authorizationData, type: ServerAuth.self)?.accessToken else {
             completion(.failure(.tokenUnavailable))
             return;
         }
-        guard let finalUrl = URL(string: url.getFullString()) else {
+        guard let finalUrl = URL(string: urlStr) else {
             completion(.failure(.badUrl))
             return;
         }

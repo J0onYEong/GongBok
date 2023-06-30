@@ -17,38 +17,43 @@ struct ReviewScreen: View {
                     Text("복습하기")
                         .font(Font.system(size: 25, weight: .bold))
                         .padding(.top, 50)
-                    ScrollView {
-                        ForEach(Array(controller.subjects.enumerated()), id: \.element) { index, item in
-                            Button {
+                    Spacer()
+                    ZStack {
+                        if controller.subjectLoadingState == .compelete {
+                            ScrollView {
+                                ForEach(Array(controller.subjects.enumerated()), id: \.element) { index, item in
+                                    Button {
+                                        
+                                        controller.addToStack(destination: .weekNumber(name: item.name, id: item.id))
+                                        
+                                    } label: {
+                                        ItemLabelView(color: .white, text: "\(item.name)", showArrow: false)
+                                            .frame(height: 60)
+                                            .padding(.bottom, 20)
+                                            .foregroundColor(.black)
+                                    }
+                                }
                                 
-//                                //!!!api요청(임시 로컬 구현)
-//                                controller.getWeekNumList(sub: item)
-//
-//                                //임시
-//                                controller.addToStack(destination: .weekNumber(name: item))
+                                Button {
+                                    controller.isShowingNewSubjectView = true
+                                } label: {
+                                    ItemLabelView(color: .background, text: "+", showArrow: false)
+                                        .frame(height: 60)
+                                        .padding(.bottom, 20)
+                                        .foregroundColor(.gray)
+                                }
                                 
                                 
-                            } label: {
-                                ItemLabelView(color: .white, text: "\(item.name)", showArrow: false)
-                                    .frame(height: 60)
-                                    .padding(.bottom, 20)
-                                    .foregroundColor(.black)
+                            }
+                            .padding([.horizontal], 20)
+                            .padding(.top, 50)
+                        } else {
+                            GeometryReader { geo in
+                                LoadingView()
+                                    .position(x: geo.size.width/2, y: geo.size.height/2)
                             }
                         }
-                        
-                        Button {
-                            controller.isShowingNewSubjectView = true
-                        } label: {
-                            ItemLabelView(color: .background, text: "+", showArrow: false)
-                                .frame(height: 60)
-                                .padding(.bottom, 20)
-                                .foregroundColor(.gray)
-                        }
-                        
-                        
                     }
-                    .padding([.horizontal], 20)
-                    .padding(.top, 50)
                 }
                 .zIndex(0)
                 
@@ -74,8 +79,8 @@ struct ReviewScreen: View {
             }
             .navigationDestination(for: ReviewScreenViewState.self) { state in
                 switch (state) {
-                case .weekNumber(let name):
-                    WeekNumberScreen(subject: name)
+                case .weekNumber(let name, let id):
+                    WeekNumberScreen(name: name, id: id)
                         .navigationBarBackButtonHidden()
                 case .quiz(let id):
                     QuizScreen(id: id)
@@ -93,9 +98,9 @@ struct ReviewScreen: View {
         }
         .environmentObject(controller)
         .onAppear {
-            controller.getSubject()
+            controller.getSubjects()
         }
-        .animation(.easeInOut, value: controller.subjects)
+        .animation(.easeIn(duration: 0.3), value: controller.subjects)
     }
 }
 

@@ -24,7 +24,7 @@ struct WebViewScreen: View {
                         .padding(10)
                 }
             }
-            WebViewRepresentable(url: URL(string: APIUrl.kakaoLoginWeb.getFullString())!)
+            WebViewRepresentable(url: URL(string: APIUrl.kakaoLoginWeb)!)
         }
     }
 }

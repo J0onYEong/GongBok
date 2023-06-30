@@ -19,7 +19,7 @@ class SettingScreenController: NavigationController<SettingScreenViewState> {
     @Published var birthYear = 2000
     
     func getUserInfo() {
-        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .get, reponseType: UserDataResponse.self, sendData: nil) { [weak self] result in
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.personalData, method: .get, reponseType: UserDataResponse.self, sendData: nil) { [weak self] result in
             switch result {
             case .success(let data):
                 
@@ -36,7 +36,7 @@ class SettingScreenController: NavigationController<SettingScreenViewState> {
     
     
     func updateUserPersonalData() {
-        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .patch, reponseType: NoReponseBody.self, sendData: UserInfo(nickname: self.nickName, birthYear: self.birthYear)) { result in
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.personalData, method: .patch, reponseType: NoReponseBody.self, sendData: UserInfo(nickname: self.nickName, birthYear: self.birthYear)) { result in
             switch result {
             case .success(_):
                 print("정보수정 성공")
@@ -47,7 +47,7 @@ class SettingScreenController: NavigationController<SettingScreenViewState> {
     }
     
     func withdrawAccountRequest(completion: (() -> ())?) {
-        HTTPRequest.shared.requestWithAccessToken(url: .personalData, method: .delete, reponseType: NoReponseBody.self, sendData: nil) { result in
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.personalData, method: .delete, reponseType: NoReponseBody.self, sendData: nil) { result in
             switch result {
             case .success(_):
                 FileController.shared.deleteData(.authorizationData)

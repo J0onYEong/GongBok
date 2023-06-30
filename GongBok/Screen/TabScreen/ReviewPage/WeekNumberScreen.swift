@@ -9,8 +9,8 @@ import SwiftUI
 
 struct WeekNumberScreen: View {
     @EnvironmentObject var controller: ReviewScreenController
-    var subject: String
-
+    var name: String
+    var id: Int
     
     var body: some View {
         VStack {
@@ -28,7 +28,7 @@ struct WeekNumberScreen: View {
                 Spacer()
             }
             (
-                Text(subject)
+                Text(name)
                     .foregroundColor(.underBar)
                 +
                 Text(" 주차별 복습하기")
@@ -36,10 +36,10 @@ struct WeekNumberScreen: View {
             .font(Font.system(size: 25, weight: .bold))
             .padding(.top, 20)
             ScrollView {
-                ForEach(Array(controller.weekNumber.enumerated()), id: \.element) { index, item in
+                ForEach(Array(controller.weekList.enumerated()), id: \.element) { index, item in
                     Button {
                         //임시
-                        let id = subject+item
+                        let id = name+String(item)
                         controller.addToStack(destination: .quiz(id: id))
                     } label: {
                         ItemLabelView(color: .white, text: "\(item)차시")
@@ -51,7 +51,7 @@ struct WeekNumberScreen: View {
                 
                 Button {
                     withAnimation(.easeInOut(duration: 0.2)) {
-                        controller.addWeekNumElement(sub: subject)
+                        controller.addWeekNumElement(id: id)
                     }
                 } label: {
                     ItemLabelView(color: .background, text: "+", showArrow: false)
@@ -64,15 +64,15 @@ struct WeekNumberScreen: View {
             .padding(.top, 50)
         }
         .onAppear {
-            print(subject)
-            controller.getWeekNumList(sub: subject)
+            controller.getWeekListBy(subjectId: id)
         }
+        .animation(.easeInOut(duration: 0.3), value: controller.weekList)
     }
 }
 
 struct WeekNumberScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WeekNumberScreen(subject: "파이썬")
+        WeekNumberScreen(name: "파이썬", id: 1)
             .environmentObject(ReviewScreenController())
     }
 }

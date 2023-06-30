@@ -8,7 +8,7 @@
 import Foundation
 
 enum ReviewScreenViewState: Hashable {
-    case weekNumber(name: String)
+    case weekNumber(name: String, id: Int)
     case quiz(id: String)
     case quizDetail(id: String)
 }
@@ -17,9 +17,11 @@ class ReviewScreenController: NavigationController<ReviewScreenViewState> {
     //ReviewScreen
     @Published private(set) var subjects: [SubjectViewModel] = []
     @Published var isShowingNewSubjectView = false
+    @Published private(set) var subjectLoadingState: LoadingState = .loading
     
     //WeekNumberScreen
-    @Published private(set) var weekNumber: [String] = []
+    @Published private(set) var weekList: [Int] = []
+    @Published private(set) var weekListLoadingState: LoadingState = .loading
     
     let quizTypes = [
         "choice" : "객관식 개념 퀴즈",
@@ -33,8 +35,12 @@ class ReviewScreenController: NavigationController<ReviewScreenViewState> {
     
 }
 
-struct ReviewScreenTestData {
-    static var weekNumber: [String : [String]] = [:]
+// MARK: - common
+extension ReviewScreenController {
+    enum LoadingState {
+        case loading
+        case compelete
+    }
 }
 
 // MARK: - 과목
@@ -45,17 +51,17 @@ extension ReviewScreenController {
         var id: Int
     }
     
-    func getSubject() {
-        HTTPRequest.shared.requestWithAccessToken(url: .getSubjects, method: .get, reponseType: Subjects.self, sendData: nil) { result in
+    func getSubjects() {
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.getSubjects, method: .get, reponseType: Subjects.self, sendData: nil) { result in
             switch result {
             case .success(let data):
-                self.objectWillChange.send()
-                
                 guard let unw = data else { return; }
                 
                 self.subjects = unw.map({
                     SubjectViewModel(name: $0.subjectName, id: $0.id)
                 })
+                
+                self.subjectLoadingState = .compelete
             case .failure(let failure):
                 print(failure.rawValue)
             }
@@ -70,10 +76,10 @@ extension ReviewScreenController {
     
     func addSubject(name: String) {
         let sendData = AddSubjectRequest(subjectName: name)
-        HTTPRequest.shared.requestWithAccessToken(url: .addSubject, method: .post, reponseType: NoReponseBody.self, sendData: sendData) { result in
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.addSubject, method: .post, reponseType: NoReponseBody.self, sendData: sendData) { result in
             switch result {
             case .success( _ ):
-                self.getSubject()
+                self.getSubjects()
             case .failure(let failure):
                 print(failure.rawValue)
             }
@@ -83,24 +89,29 @@ extension ReviewScreenController {
 
 // MARK: - 차시
 extension ReviewScreenController {
-    func getWeekNumList(sub: String) {
-        if let list = ReviewScreenTestData.weekNumber[sub] {
-            weekNumber = list
-            return;
+    func getWeekListBy(subjectId: Int) {
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.subjectWeek(to: subjectId), method: .get, reponseType: [Int].self, sendData: nil) { result in
+            switch (result) {
+            case .success(let data):
+                guard let uwp = data else { return; }
+                self.weekList = uwp
+                self.weekListLoadingState = .compelete
+            case .failure(let error):
+                print(error.rawValue)
+            }
         }
-        weekNumber = []
-        ReviewScreenTestData.weekNumber[sub] = []
     }
     
-    func addWeekNumElement(sub: String) {
-        let target = String(weekNumber.count+1)
-        
-        //로컬 리스트 추가
-        //로컬 리스트는 subject선택시 각 subject의 데이터로 업데이트됨
-        weekNumber.append(target)
-        
-        //!!!서버반영
-        ReviewScreenTestData.weekNumber[sub] = weekNumber
+    func addWeekNumElement(id: Int) {
+        HTTPRequest.shared.requestWithAccessToken(urlStr: APIUrl.subjectWeek(to: id), method: .post, reponseType: NoReponseBody.self, sendData: nil) { result in
+            switch(result) {
+            case .success(_):
+                print("차시추가 성공")
+                self.getWeekListBy(subjectId: id)
+            case.failure(let error):
+                print("차시추가 실패, ", error.rawValue)
+            }
+        }
     }
     
     //차시 삭제
