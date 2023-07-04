@@ -37,6 +37,7 @@
 		9BA2D45F2A27528A00D2EB01 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */; };
 		9BA2D4622A2752B200D2EB01 /* WebViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */; };
 		9BAF26082A13667500E50FB7 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF26072A13667500E50FB7 /* StarView.swift */; };
+		9BBD1D732A54370100580B8F /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD1D722A54370100580B8F /* SubjectViewModel.swift */; };
 		9BC295872A2B721200F6DF14 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC295862A2B721200F6DF14 /* SpeechBubbleView.swift */; };
 		9BC2958A2A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC295892A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift */; };
 		9BDDDE842A3F0EDA000CD942 /* BlankQuizScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDDE832A3F0EDA000CD942 /* BlankQuizScreen1.swift */; };
@@ -96,6 +97,7 @@
 		9BA2D45E2A27528A00D2EB01 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 		9BA2D4612A2752B200D2EB01 /* WebViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRepresentable.swift; sourceTree = "<group>"; };
 		9BAF26072A13667500E50FB7 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		9BBD1D722A54370100580B8F /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		9BC295862A2B721200F6DF14 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
 		9BC295892A2B98FC00F6DF14 /* SpeechBubbleviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleviewModel.swift; sourceTree = "<group>"; };
 		9BDDDE832A3F0EDA000CD942 /* BlankQuizScreen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankQuizScreen1.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				9B7809CC2A1996D900A63B66 /* ReviewScreenController.swift */,
 				9BDDDE8A2A407F9F000CD942 /* BlankQuiz1ViewModel.swift */,
 				9B1786DB2A4C20AA00D4D987 /* NewSubjectViewModel.swift */,
+				9BBD1D722A54370100580B8F /* SubjectViewModel.swift */,
 			);
 			path = ReviewScreen;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				9BFE03BA2A10AB2D00E105D5 /* LoginScreenViewModel.swift in Sources */,
 				9BFE03C02A10AB2D00E105D5 /* LoginScreen.swift in Sources */,
 				9B7C94382A231A5700E18C7E /* ConfirmationModalView.swift in Sources */,
+				9BBD1D732A54370100580B8F /* SubjectViewModel.swift in Sources */,
 				9B0BD94A2A4E7F9C00211377 /* LoadingView.swift in Sources */,
 				9B7809D12A1A0DF000A63B66 /* QuizScreen.swift in Sources */,
 				9B552D282A2123F000589537 /* TransitionExtension.swift in Sources */,
@@ -601,7 +605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -655,7 +659,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -673,7 +677,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GongBok/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XHRN62S9RK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GongBok/Info.plist;

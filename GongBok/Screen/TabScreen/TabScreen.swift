@@ -29,6 +29,9 @@ struct TabScreen: View {
                 .tag(5)
         }
         .onAppear {
+            UITabBar.appearance().shadowImage = UIImage()
+            UITabBar.appearance().backgroundImage = UIImage()
+            UITabBar.appearance().isTranslucent = true
             UITabBar.appearance().backgroundColor = UIColor(hex: "D7CCBD")!
         }
         .accentColor(.tabViewAccent)

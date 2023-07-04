@@ -24,7 +24,7 @@ struct ReviewScreen: View {
                                 ForEach(Array(controller.subjects.enumerated()), id: \.element) { index, item in
                                     Button {
                                         
-                                        controller.addToStack(destination: .weekNumber(name: item.name, id: item.id))
+                                        controller.addToStack(destination: .weekNumber(id: item.id))
                                         
                                     } label: {
                                         ItemLabelView(color: .white, text: "\(item.name)", showArrow: false)
@@ -79,8 +79,8 @@ struct ReviewScreen: View {
             }
             .navigationDestination(for: ReviewScreenViewState.self) { state in
                 switch (state) {
-                case .weekNumber(let name, let id):
-                    WeekNumberScreen(name: name, id: id)
+                case .weekNumber(let id):
+                    WeekNumberScreen(id: id)
                         .navigationBarBackButtonHidden()
                 case .quiz(let id):
                     QuizScreen(id: id)

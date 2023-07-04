@@ -9,8 +9,15 @@ import SwiftUI
 
 struct WeekNumberScreen: View {
     @EnvironmentObject var controller: ReviewScreenController
-    var name: String
     var id: Int
+    
+    private var name: String {
+        controller.subjects[id]?.name ?? "Error"
+    }
+    
+    private var list: [Int] {
+        controller.subjects[id]?.weekList ?? []
+    }
     
     var body: some View {
         VStack {
@@ -36,7 +43,7 @@ struct WeekNumberScreen: View {
             .font(Font.system(size: 25, weight: .bold))
             .padding(.top, 20)
             ScrollView {
-                ForEach(Array(controller.weekList.enumerated()), id: \.element) { index, item in
+                ForEach(Array(list.enumerated()), id: \.element) { index, item in
                     Button {
                         //임시
                         let id = name+String(item)
@@ -63,16 +70,12 @@ struct WeekNumberScreen: View {
             .padding([.horizontal], 20)
             .padding(.top, 50)
         }
-        .onAppear {
-            controller.getWeekListBy(subjectId: id)
-        }
-        .animation(.easeInOut(duration: 0.3), value: controller.weekList)
     }
 }
 
 struct WeekNumberScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WeekNumberScreen(name: "파이썬", id: 1)
+        WeekNumberScreen(id: 1)
             .environmentObject(ReviewScreenController())
     }
 }
